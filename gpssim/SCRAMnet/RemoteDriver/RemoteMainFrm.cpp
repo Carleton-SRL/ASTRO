@@ -1,0 +1,683 @@
+#include "pch.h"
+#pragma hdrstop
+
+#ifndef RemoteMainFrmH
+#include "RemoteMainFrm.h"
+#endif
+
+#ifndef RemoteTypesH
+#include "RemoteTypes.h"
+#endif
+
+#ifndef InterfaceOptionsH
+#include "InterfaceOptions.h"
+#endif
+
+#ifndef ClosedLoopSimTypeH
+#include "ClosedLoopSimType.h"
+#endif
+
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma link "ovclabel"
+#pragma link "RzButton"
+#pragma link "o32flxbn"
+#pragma link "RzPanel"
+#pragma link "RzSplit"
+#pragma link "StShlCtl"
+#pragma link "NavStateFram"
+#pragma link "RzEdit"
+#pragma link "RzSpnEdt"
+#pragma link "CSIntf"
+#pragma link "NavStateFram"
+#pragma link "InterfaceAcceptFram"
+#pragma resource "*.dfm"
+
+
+//---------------------------------------------------------------------------
+//
+// $Workfile::                                                       $
+//
+// $Revision::                                                       $
+//
+// $History::                                                        $
+//
+//
+//---------------------------------------------------------------------------
+
+
+
+
+TRemoteMainForm *RemoteMainForm;
+
+static int Breakpt;
+
+static const AnsiString InvalidScenSelStr    = "(Invalid Scenario Selected)";
+static const AnsiString InvalidVehFileSelStr = "(Invalid Vehicle Truth File Selected)";
+static const AnsiString VehFileName          = "Truth1.scn";
+//---------------------------------------------------------------------------
+__fastcall
+TRemoteMainForm::TRemoteMainForm
+   (
+   TComponent* Owner
+   ) :
+   TForm( Owner ),
+   ScenFolder( NULL ),
+   ScenValid( false ),
+   VehFileValid( false ),
+   SelType( eSelScen ),
+   VoyProfile( NULL ),
+   VehicleTruthFile( NULL ),
+   IntType( eIntGpib ),
+   RemoteDriverPf( NULL )
+{
+
+   VoyProfile     = new VoyDefProfile();
+   RemoteDriverPf = new TRemoteDriverPf();
+
+   IntType        = RemoteDriverPf->IntType;
+
+   try
+   {
+      SelScenTreeView->SelectFolder( VoyProfile->GetRunsDir() );
+   }
+   catch(...)
+   {
+   }
+
+   SetSelTypeScen();
+   SetIntType( IntType );
+   InterfaceFlexBtn->ActiveItem = IntType;
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TRemoteMainForm::CancelBtnClick(TObject *Sender)
+{
+   Application->Terminate();   
+}
+//---------------------------------------------------------------------------
+void __fastcall
+TRemoteMainForm::SelScenTreeViewFolderSelected
+   (
+   TObject        * Sender,
+   TStShellFolder * Folder
+   )
+{
+
+   if ( IsSelScen() )
+   {
+
+      ChangeSelScen( Folder );
+
+   }
+   else if ( IsSelVehFile() )
+   {
+
+      DispInvalidVehFile();
+
+   }
+
+}
+//---------------------------------------------------------------------------
+
+
+bool const
+TRemoteMainForm::IsScenValid
+   (
+   const AnsiString & ScenarioRoot
+   ) const
+{
+   char CurrentDir[MAX_PATH];
+   bool CurrentDirValid = ( getcwd( CurrentDir, MAX_PATH ) != NULL );
+   chdir( ScenarioRoot.c_str() );
+   ifstream ValidBuild("ValidBld.scn");
+   int ValidScen=0;
+   ValidBuild >> ValidScen;
+   if ( CurrentDirValid )
+   {
+      chdir( CurrentDir );
+   }
+   ValidBuild.close();
+   return( ValidScen != 0 && ValidBuild.good() );
+
+}
+
+
+
+eSelType const
+TRemoteMainForm::GetSelTypeFromItem
+   (
+   const int ItemIndex
+   ) const
+{
+
+   return( (eSelType) ItemIndex );
+
+}
+
+
+void
+TRemoteMainForm::SetSelType
+   (
+   const eSelType NewSelType
+   )
+{
+
+   if ( NewSelType == eSelScen )
+   {
+      SetSelTypeScen();
+   }
+   else if ( NewSelType == eSelVehFile )
+   {
+      SetSelTypeVehFile();
+   }
+
+}
+
+
+void
+TRemoteMainForm::SetSelTypeScen
+   (
+
+   )
+{
+
+   SelType                  = eSelScen;
+   SelTypeLbl->Caption      = "Selected Scenario: ";
+   SelScenListView->Visible = false;
+   DispInvalidScenSel();
+
+}
+
+
+void
+TRemoteMainForm::SetSelTypeVehFile
+   (
+
+   )
+{
+
+   SelType                  = eSelVehFile;
+   SelTypeLbl->Caption      = "Selected Vehicle Truth File: ";
+   SelScenListView->Visible = true;
+   DispInvalidVehFile();
+
+}
+
+bool const
+TRemoteMainForm::IsSelScen
+   (
+
+   ) const
+{
+
+   return( SelType == eSelScen );
+
+}
+
+
+bool const
+TRemoteMainForm::IsSelVehFile
+   (
+
+   ) const
+{
+
+   return( SelType == eSelVehFile );
+
+}
+
+
+
+void
+TRemoteMainForm::ChangeSelScen
+   (
+   TStShellFolder * NewFolder
+   )
+{
+
+   ScenValid = false;
+
+   ScenFolder = NewFolder;
+
+   if ( ScenFolder )
+   {
+
+      if ( ScenFolder->IsFileFolder )
+      {
+
+         ScenValid = IsScenValid( ScenFolder->Path );
+
+      }
+
+   }
+
+   DispSelScen();
+
+   OKBtn->Enabled = ScenValid;
+
+}
+
+
+void
+TRemoteMainForm::DispSelScen
+   (
+
+   )
+{
+
+   if ( ScenValid )
+   {
+
+      AnsiString ScenVehPath    = ScenFolder->Path + AnsiString("\\") + VehFileName;
+
+      TStShellItem *ScenVehItem = new TStShellItem( ScenVehPath, NULL );
+
+      TDateTime VehDateTime     = ScenVehItem->Date;
+
+      BuiltDateTimeLbl->Caption = VehDateTime.DateTimeString();
+
+      SelLbl->Caption           = ScenFolder->DisplayName;
+
+      delete ScenVehItem;
+
+      TVehicleTruthFile *NewVehTruthFile = new TVehicleTruthFile( ScenFolder->Path, 0 );
+      SetNavStates( NewVehTruthFile );
+      delete NewVehTruthFile;
+
+   }
+   else
+   {
+
+      DispInvalidScenSel();
+
+   }
+
+}
+
+void __fastcall
+TRemoteMainForm::SelTypeBtnClick
+   (
+   TObject      * Sender,
+   int            Item
+   )
+{
+
+   eSelType NewSelType = GetSelTypeFromItem( Item );
+
+   SetSelType( NewSelType );
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall
+TRemoteMainForm::SelTypeBtnItemChange
+   (
+   TObject     * Sender,
+   int         & OldItem,
+   int         & NewItem
+   )
+{
+   eSelType SelType = GetSelTypeFromItem( NewItem );
+
+   SetSelType( SelType );
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall
+TRemoteMainForm::SelTypeBtnMenuClick
+   (
+   TObject     * Sender,
+   int         & OldItem,
+   int         & NewItem
+   )
+{
+   eSelType SelType = GetSelTypeFromItem( NewItem );
+
+   SetSelType( SelType );
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TRemoteMainForm::SelScenListViewItemSelected(
+      TObject *Sender, TStShellItem *Item)
+{
+
+   if ( IsSelVehFile() )
+   {
+
+      ChangeSelVehFile( Item );
+
+   }
+
+   DispSelVehFile( Item );
+
+}
+
+
+void
+TRemoteMainForm::ChangeSelVehFile
+   (
+   TStShellItem * Item
+   )
+{
+
+   VehFileValid = false;
+
+   try
+   {
+
+      VehFileValid = IsVehFileValid( Item );
+
+   }
+   catch(...)
+   {
+   }
+
+   OKBtn->Enabled = VehFileValid;
+
+}
+
+
+bool const
+TRemoteMainForm::IsVehFileValid
+   (
+   TStShellItem * VehFileItem
+   )
+{
+
+   bool NewVehFileValid = false;
+
+   try
+   {
+
+      // Check to see if size is even multiple of NavData
+      //
+      int Size    = VehFileItem->Size;
+      int NumRecs = Size/sizeof( TVehStateRec );
+      if ( Size != (int) ( NumRecs*sizeof( TVehStateRec ) ) )
+      {
+         return( false );
+      }
+      if ( Size == 0 )
+      {
+         return( false );
+      }
+
+      NewVehFileValid = true;
+
+
+   }
+   catch(...)
+   {
+   }
+
+   return( NewVehFileValid );
+
+}
+
+
+void
+TRemoteMainForm::SetNavStates
+   (
+   TVehicleTruthFile * NewVehTruthFile
+   )
+{
+
+   if ( NewVehTruthFile && ( ( IsSelScen() && ScenValid ) || ( IsSelVehFile() && VehFileValid ) ) )
+   {
+      StartNavStateFrame->SetNavState( NewVehTruthFile->GetFirst() );
+      EndNavStateFrame->SetNavState( NewVehTruthFile->GetLast() );
+      NavStatePageCtrl->Visible = true;
+   }
+   else
+   {
+      NavStatePageCtrl->Visible = false;
+   }
+
+
+}
+
+
+void
+TRemoteMainForm::DispSelVehFile
+   (
+   TStShellItem *ScenVehItem
+   )
+{
+
+   if ( VehFileValid )
+   {
+
+      ScenVehPath                        = ScenVehItem->Path;
+
+      TDateTime VehDateTime              = ScenVehItem->Date;
+
+      BuiltDateTimeLbl->Caption          = VehDateTime.DateTimeString();
+
+      SelLbl->Caption                    = ScenVehItem->DisplayName;
+
+      TVehicleTruthFile *NewVehTruthFile = new TVehicleTruthFile( 0 );
+      SetNavStates( NewVehTruthFile );
+      delete NewVehTruthFile;
+
+   }
+   else
+   {
+
+      DispInvalidVehFile();
+
+   }
+
+}
+
+
+void
+TRemoteMainForm::DispInvalidVehFile
+   (
+
+   )
+{
+   BuiltDateTimeLbl->Caption = " ... ";
+   SelLbl->Caption = InvalidVehFileSelStr;
+   NavStatePageCtrl->Visible = false;
+
+}
+
+
+void
+TRemoteMainForm::DispInvalidScenSel
+   (
+
+   )
+{
+   BuiltDateTimeLbl->Caption = " ... ";
+   SelLbl->Caption = InvalidScenSelStr;
+   NavStatePageCtrl->Visible = false;
+
+}
+
+
+
+eIntType const
+TRemoteMainForm::GetIntTypeFromItem
+   (
+   const int ItemIndex
+   ) const
+{
+   return( (eIntType) ItemIndex );
+}
+
+
+void
+TRemoteMainForm::SetIntType
+   (
+   const eIntType NewIntType
+   )
+{
+
+   RemoteDriverPf->IntType    = NewIntType;
+
+   IntType                    = NewIntType;
+
+   delete IntOptionsFrame;
+
+   IntOptionsFrame            = NULL;
+
+   AnsiString IntName;
+
+   if ( NewIntType == eIntGpib )
+   {
+      TGpibIntOptionsFrame *GpibFrame            = new TGpibIntOptionsFrame( this );
+      IntOptionsFrame                            = GpibFrame;
+      AcceptOptions                              = GpibFrame;
+      InterfaceAccept->AcceptInterfaceOptions    = AcceptOptions;
+      IntName                                    = "Gpib";
+   }
+   else if ( NewIntType == eIntEthernet )
+   {
+      TEthernetIntOptionsFrame * EthernetFrame   = new TEthernetIntOptionsFrame( this );
+      IntOptionsFrame                            = EthernetFrame;
+      AcceptOptions                              = EthernetFrame;
+      InterfaceAccept->AcceptInterfaceOptions    = AcceptOptions;
+      IntName                                    = "Ethernet";
+   }
+   else if ( NewIntType == eIntSerial )
+   {
+      TSerialIntOptionsFrame * SerialFrame       = new TSerialIntOptionsFrame( this );
+      IntOptionsFrame                            = SerialFrame;
+      AcceptOptions                              = SerialFrame;
+      InterfaceAccept->AcceptInterfaceOptions    = AcceptOptions;
+      IntName                                    = "Serial";
+   }
+
+   if ( IntOptionsFrame )
+   {
+      IntOptionsFrame->Parent                    = RightInterfacePnl;
+      IntOptionsFrame->Visible                   = true;
+      IntOptionsFrame->Align                     = alClient;
+      IntOptionsFrame->Name                      = IntName + AnsiString( "IntOptions" );
+   }
+   else
+   {
+      CodeSite->SendInteger( csmError, AnsiString( "TRciDriverForm::SetIntType invalid type " ), NewIntType );
+   }
+
+}
+
+void __fastcall
+TRemoteMainForm::InterfaceFlexBtnItemChange
+   (
+   TObject           * Sender,
+   int               & OldItem,
+   int               & NewItem
+   )
+{
+
+   eIntType NewIntType = GetIntTypeFromItem( NewItem );
+
+   SetIntType( NewIntType );
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall
+TRemoteMainForm::InterfaceFlexBtnClick
+   (
+   TObject             * Sender,
+   int                 Item
+   )
+{
+
+   eIntType NewIntType = GetIntTypeFromItem( Item );
+
+   SetIntType( NewIntType );
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall
+TRemoteMainForm::InterfaceFlexBtnMenuClick
+   (
+   TObject             * Sender,
+   int                 & OldItem,
+   int                 & NewItem
+   )
+{
+
+   eIntType NewIntType = GetIntTypeFromItem( NewItem );
+
+   SetIntType( NewIntType );
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall
+TRemoteMainForm::OKBtnClick
+   (
+   TObject                 * Sender
+   )
+{
+
+   StartRun();
+
+}
+
+void
+TRemoteMainForm::StartRun
+   (
+   )
+{      
+
+   RemoteDriverPf->IntType = IntType;
+   // Build TCloseLoopSimType and IntOptions
+   //
+   AnsiString Path;
+   if ( SelType == eSelScen )
+   {
+      Path = ScenFolder->Path;
+   }
+   else
+   {
+      Path = VehFileItem->Path;
+   }
+
+   TClosedLoopSimType ClosedLoopSimType( SelType, IntType, UpdateRateEdt->IntValue, Path, PreloadEdt->Value, GetIntProtocolFromItem( IntProtocolBtn->ActiveItem ) );
+
+   ClosedLoopRunForm          = new TClosedLoopRunForm( this, ClosedLoopSimType );
+   ClosedLoopRunForm->Visible = true;
+   Visible                    = false;
+
+}
+
+eIntProtocol const
+TRemoteMainForm::GetIntProtocolFromItem
+   (
+   const int ItemIndex
+   ) const
+{
+
+   return( (eIntProtocol) ItemIndex );
+
+}
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall
+TRemoteMainForm::SelScenTreeViewDblClick
+   (
+   TObject                 * Sender
+   )
+{
+   if ( ScenValid )
+   {
+      StartRun();
+   }
+//
+}
+//---------------------------------------------------------------------------
+

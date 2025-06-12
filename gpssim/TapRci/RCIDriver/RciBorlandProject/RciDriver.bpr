@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="RciDriver.exe"/>
+    <OBJFILES value="Objs\RciDriver.obj Objs\RciDriverFrm.obj Objs\GpibIntOptionsFram.obj 
+      BorlandC_gpib-32.obj Objs\RciRunFrm.obj Objs\MsgListFram.obj 
+      Objs\StartScenFram.obj Objs\RciDriverMsgs.obj Objs\OutMsg.obj 
+      Objs\InitGeoFram.obj Objs\StartLocalFram.obj Objs\SetSvidFram.obj 
+      Objs\SetPowerFram.obj Objs\ShutdownFram.obj Objs\QueryFram.obj 
+      Objs\StopFram.obj Objs\Interface.obj Objs\Gpib.obj Objs\InMsg.obj 
+      Objs\Schedule.obj Objs\Utilities.obj Objs\EXPANDABLEDLG.obj 
+      Objs\AboutDlg.obj"/>
+    <RESFILES value="RciDriver.res"/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) RciDriverFrm.dfm GpibIntOptionsFram.dfm RciRunFrm.dfm 
+      MsgListFram.dfm StartScenFram.dfm InitGeoFram.dfm StartLocalFram.dfm 
+      SetSvidFram.dfm SetPowerFram.dfm ShutdownFram.dfm QueryFram.dfm 
+      StopFram.dfm EXPANDABLEDLG.dfm AboutDlg.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="S400_R51.lib K101_R51.lib VclX50.lib Rz252N50.lib CSP20I50.lib 
+      O403_R51.lib Vcl50.lib"/>
+    <SPARELIBS value="Vcl50.lib O403_R51.lib CSP20I50.lib Rz252N50.lib VclX50.lib K101_R51.lib 
+      S400_R51.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi bcbsmp50.bpi Qrpt50.bpi Vcldb50.bpi Vclbde50.bpi 
+      vcldbx50.bpi TeeUI50.bpi TeeDB50.bpi Tee50.bpi TeeQR50.bpi bcbie50.bpi 
+      vclie50.bpi Inetdb50.bpi Inet50.bpi bcb2kaxserver50.bpi S400_R51.bpi 
+      S400BR51.bpi O403_R51.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value="_DEBUG;NO_WIN32_LEAN_AND_MEAN"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="RciDriver.cpp"/>
+    <INCLUDEPATH value="&quot;D:\Program Files\Raize\CS2\LibBCB5\&quot;;&quot;d:\program files\Turbopower\SysTools\&quot;;D:\PROGRA~1\TURBOP~1\SHELLS~1\hpp5\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="..;&quot;D:\Program Files\Raize\CS2\LibBCB5\&quot;;&quot;d:\program files\Turbopower\SysTools\&quot;;D:\PROGRA~1\TURBOP~1\SHELLS~1\;E:\;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl50.csm -Hc -Vx -Ve -X- -r- -a8 -b -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-N2Objs -N0Objs -$YD -$W -$O- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-IObjs -D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Navigation Laboratories
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+D:\WINNT\System32\O403_R51.BPL=TurboPower Orpheus 4.03 Components - VCL51
+d:\program files\CW32\BCBSYNC5.BPL=CodeWright - C++ Builder 5 Sync Package
+
+[HistoryLists\hlIncludePath]
+Count=6
+Item0=D:\Program Files\Raize\CS2\LibBCB5\;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\hpp5\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item1=E:\Raize\RC25\LibBCB5;D:\Program Files\Raize\CS2\LibBCB5;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;$(BCB)\include;$(BCB)\include\vcl
+Item2=D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;$(BCB)\include;$(BCB)\include\vcl
+Item3=D:\PROGRA~1\TURBOP~1\Orpheus\hpp5;$(BCB)\include;$(BCB)\include\vcl
+Item4=D:\PROGRA~1\TURBOP~1\Orpheus;$(BCB)\include;$(BCB)\include\vcl
+Item5=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..;D:\Program Files\Raize\CS2\LibBCB5\;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\;E:\;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item1=D:\Program Files\Raize\CS2\LibBCB5\;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item2=E:\Raize\RC25\LibBCB5\;D:\Program Files\Raize\CS2\LibBCB5\;D:\PROGRA~1\TURBOP~1\Orpheus\;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;$(BCB)\lib\obj;$(BCB)\lib
+Item3=E:\Raize\RC25\LibBCB5;D:\Program Files\Raize\CS2\LibBCB5;D:\PROGRA~1\TURBOP~1\Orpheus\;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;$(BCB)\lib\obj;$(BCB)\lib
+Item4=D:\PROGRA~1\TURBOP~1\Orpheus\;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;$(BCB)\lib\obj;$(BCB)\lib
+Item5=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=2
+Item0=_DEBUG;NO_WIN32_LEAN_AND_MEAN
+Item1=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=Objs
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

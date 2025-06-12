@@ -1,0 +1,1 @@
+[Linker Error] Unresolved external '__fastcall Ststrl::ExtractTokensL(const System::AnsiString, const System::AnsiString, char, bool, Classes::TStrings *)' referenced from E:\TAPESTRY\TOOLS\RCIDRIVER\OBJS\INMSG.OBJ

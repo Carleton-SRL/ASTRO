@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="RemoteDriver.exe"/>
+    <OBJFILES value="Objs\RemoteDriver.obj Objs\RemoteMainFrm.obj Objs\EtherFram.obj 
+      Objs\VOYDEFPF.obj Objs\gpstime.obj Objs\VhTrthFl.obj Objs\NavStateFram.obj 
+      Objs\geofrmt.obj Objs\GEOFMTPF.obj Objs\PosVec.obj 
+      Objs\GpibIntOptionsFram.obj BorlandC_gpib-32.obj Objs\ClosedLoopRunFrm.obj 
+      Objs\ClosedLoopSimType.obj Objs\MsgListFram.obj Objs\CLControl.obj 
+      Objs\Interface.obj Objs\Gpib.obj Objs\InMsg.obj Objs\OutMsg.obj 
+      Objs\StelMsgs.obj Objs\Schedule.obj Objs\ScenTime.obj 
+      Objs\EXPANDABLEDLG.obj Objs\AboutDlg.obj Objs\DataExtractionChanFram.obj 
+      Objs\EthernetIntOptionsFram.obj Objs\Ethernet.obj Objs\RemoteDriverPf.obj 
+      Objs\Dcm.obj Objs\Vector3d.obj Objs\AttVec.obj 
+      Objs\DataExtractionReqFrm.obj Objs\InterfaceAcceptFram.obj 
+      Objs\SerialIntOptionsFram.obj Objs\ThreadDataCom.obj 
+      Objs\ERemoteDriverException.obj Objs\OperationErrorFrm.obj 
+      Objs\InterfaceParams.obj Objs\DebugUtils.obj Objs\GpibTimeout.obj 
+      Objs\ChanAssignFrm.obj Objs\SendMsgsFrm.obj Objs\SendSetChanPowerFrm.obj 
+      Objs\ExceptionLog.obj Objs\RtMotionMemFrm.obj Objs\ScenIniFile.obj 
+      Objs\SyncToSkyAutoStartPrms.obj Objs\TapMsecPf.obj"/>
+    <RESFILES value="RemoteDriver.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) RemoteMainFrm.dfm EtherFram.dfm NavStateFram.dfm 
+      GpibIntOptionsFram.dfm ClosedLoopRunFrm.dfm MsgListFram.dfm 
+      EXPANDABLEDLG.dfm AboutDlg.dfm DataExtractionChanFram.dfm 
+      EthernetIntOptionsFram.dfm DataExtractionReqFrm.dfm 
+      InterfaceAcceptFram.dfm SerialIntOptionsFram.dfm OperationErrorFrm.dfm 
+      ChanAssignFrm.dfm SendMsgsFrm.dfm SendSetChanPowerFrm.dfm RtMotionMemFrm.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="TeeUI7C6.lib TeePro7C6.lib Tee7C6.lib dxGDIPlusC6.lib dxThemeC6.lib 
+      dxNavBarC6.lib Rz30Ctls60.lib K102_R61.lib S402_R61.lib vclx.lib 
+      CSP20I60.lib O405_R61.lib vcl.lib rtl.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib O405_R61.lib CSP20I60.lib vclx.lib S402_R61.lib 
+      K102_R61.lib Rz30Ctls60.lib dxNavBarC6.lib dxThemeC6.lib dxGDIPlusC6.lib 
+      Tee7C6.lib TeePro7C6.lib TeeUI7C6.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi bcbsmp.bpi qrpt.bpi dbrtl.bpi vcldb.bpi 
+      bdertl.bpi vcldbx.bpi teeui.bpi teedb.bpi tee.bpi teeqr.bpi bcbie.bpi 
+      vclie.bpi inetdb.bpi inet.bpi bcb2kaxserver.bpi S401_r61.bpi S401br61.bpi 
+      o405_r61.bpi VclSmp.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;&quot;C:\Program Files\EurekaLog 4\CBuilder6&quot;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;NO_WIN32_LEAN_AND_MEAN;EUREKALOG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="RemoteDriver.cpp"/>
+    <INCLUDEPATH value="..\..;&quot;C:\Program Files\EurekaLog 4\CBuilder6&quot;;$(DevExpInc);$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc);$(TeeChartInc)"/>
+    <LIBPATH value="..\..;&quot;C:\Program Files\EurekaLog 4\CBuilder6&quot;;$(DevExpLib);$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib);$(TeeChartLib)"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\.. -I&quot;C:\Program Files\EurekaLog 4\CBuilder6&quot; -I$(DevExpInc) 
+      -I$(OrpheusInc) -I$(ShellShockInc) -I$(SysToolsInc) -I$(RaizeInc) 
+      -I$(CodeSiteInc) -I$(BCB)\include -I$(BCB)\include\vcl -I$(AbakusInc) 
+      -I$(TeeChartInc) -src_suffix cpp -D_DEBUG -DNO_WIN32_LEAN_AND_MEAN 
+      -DEUREKALOG -boa"/>
+    <CFLAG1 value="-Od -H=remotedriver.csm -Hc -Vx -Ve -X- -r- -a8 -b -k -y -v -vi- -c -tW -tWM"/>
+    <PFLAGS value="-N2Objs -N0Objs -$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-IObjs -D&quot;&quot; -aa -Tpe -GD -s -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="RemoteDriver.cpp" FORMNAME="" UNITNAME="RemoteDriver" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="RemoteDriver.res" FORMNAME="" UNITNAME="RemoteDriver" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="RemoteMainFrm.cpp" FORMNAME="RemoteMainForm" UNITNAME="RemoteMainFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EtherFram.cpp" FORMNAME="EtherFrame" UNITNAME="EtherFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="VOYDEFPF.cpp" FORMNAME="" UNITNAME="VOYDEFPF" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="gpstime.cpp" FORMNAME="" UNITNAME="gpstime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="VhTrthFl.cpp" FORMNAME="" UNITNAME="VhTrthFl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NavStateFram.cpp" FORMNAME="NavStateFrame" UNITNAME="NavStateFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="geofrmt.cpp" FORMNAME="" UNITNAME="geofrmt" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GEOFMTPF.cpp" FORMNAME="" UNITNAME="GEOFMTPF" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PosVec.cpp" FORMNAME="" UNITNAME="PosVec" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GpibIntOptionsFram.cpp" FORMNAME="GpibIntOptionsFrame" UNITNAME="GpibIntOptionsFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="BorlandC_gpib-32.obj" FORMNAME="" UNITNAME="BorlandC_gpib-32" CONTAINERID="OBJTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ClosedLoopRunFrm.cpp" FORMNAME="ClosedLoopRunForm" UNITNAME="ClosedLoopRunFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ClosedLoopSimType.cpp" FORMNAME="" UNITNAME="ClosedLoopSimType" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="MsgListFram.cpp" FORMNAME="MsgListFrame" UNITNAME="MsgListFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="CLControl.cpp" FORMNAME="" UNITNAME="CLControl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Interface.cpp" FORMNAME="" UNITNAME="Interface" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Gpib.cpp" FORMNAME="" UNITNAME="Gpib" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InMsg.cpp" FORMNAME="" UNITNAME="InMsg" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OutMsg.cpp" FORMNAME="" UNITNAME="OutMsg" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="StelMsgs.cpp" FORMNAME="" UNITNAME="StelMsgs" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Schedule.cpp" FORMNAME="" UNITNAME="Schedule" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ScenTime.cpp" FORMNAME="" UNITNAME="ScenTime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="EXPANDABLEDLG.cpp" FORMNAME="ExpandableDialog" UNITNAME="EXPANDABLEDLG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="AboutDlg.cpp" FORMNAME="AboutDialog" UNITNAME="AboutDlg" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DataExtractionChanFram.cpp" FORMNAME="DataExtractionChanFrame" UNITNAME="DataExtractionChanFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="EthernetIntOptionsFram.cpp" FORMNAME="EthernetIntOptionsFrame" UNITNAME="EthernetIntOptionsFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="Ethernet.cpp" FORMNAME="" UNITNAME="Ethernet" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="RemoteDriverPf.cpp" FORMNAME="" UNITNAME="RemoteDriverPf" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Dcm.cpp" FORMNAME="" UNITNAME="Dcm.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Vector3d.cpp" FORMNAME="" UNITNAME="Vector3d.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="AttVec.cpp" FORMNAME="" UNITNAME="AttVec" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DataExtractionReqFrm.cpp" FORMNAME="DataExtractionReqForm" UNITNAME="DataExtractionReqFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InterfaceAcceptFram.cpp" FORMNAME="InterfaceAcceptFrame" UNITNAME="InterfaceAcceptFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="SerialIntOptionsFram.cpp" FORMNAME="SerialIntOptionsFrame" UNITNAME="SerialIntOptionsFram" CONTAINERID="CCompiler" DESIGNCLASS="TFrame" LOCALCOMMAND=""/>
+      <FILE FILENAME="ThreadDataCom.cpp" FORMNAME="" UNITNAME="ThreadDataCom" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ERemoteDriverException.h" FORMNAME="" UNITNAME="ERemoteDriverException.h" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ERemoteDriverException.cpp" FORMNAME="" UNITNAME="ERemoteDriverException" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="OperationErrorFrm.cpp" FORMNAME="OperationErrorForm" UNITNAME="OperationErrorFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="InterfaceParams.cpp" FORMNAME="" UNITNAME="InterfaceParams" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="DebugUtils.cpp" FORMNAME="" UNITNAME="DebugUtils" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="GpibTimeout.cpp" FORMNAME="" UNITNAME="GpibTimeout" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ChanAssignFrm.cpp" FORMNAME="ChanAssignForm" UNITNAME="ChanAssignFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SendMsgsFrm.cpp" FORMNAME="SendMsgsForm" UNITNAME="SendMsgsFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SendSetChanPowerFrm.cpp" FORMNAME="SendSetChanPowerForm" UNITNAME="SendSetChanPowerFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="C:\Program Files\EurekaLog 4\CBuilder6\ExceptionLog.pas" FORMNAME="" UNITNAME="ExceptionLog" CONTAINERID="PascalCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="RtMotionMemFrm.cpp" FORMNAME="RtMotionMemForm" UNITNAME="RtMotionMemFrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ScenIniFile.cpp" FORMNAME="" UNITNAME="ScenIniFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SyncToSkyAutoStartPrms.cpp" FORMNAME="" UNITNAME="SyncToSkyAutoStartPrms" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="TapMsecPf.cpp" FORMNAME="" UNITNAME="TapMsecPf" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=0
+MinorVer=1
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Navigation Laboratories
+FileDescription=
+FileVersion=0.1.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=Closed Loop Driver
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\program files\borland\cbuilder6\Projects\Bpl\TMSC6.bpl=TMS Component Pack
+C:\WINNT\System32\dclShXDbv2C6.bpl=Shell+ DB Components v2.1
+C:\Program Files\Developer Express Inc\Lib\Lib\dxLayoutControldxEditAdaptersC6.bpl=ExpressLayoutControl Adapters for ExpressEditors Library by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSTLLnkC6.bpl=ExpressPrinting System ReportLink for ExpressQuantumTreeList by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSdxDBTLLnkC6.bpl=ExpressPrinting System ReportLink for ExpressQuantumDBTreeList by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSdxDBGrLnkC6.bpl=ExpressPrinting System ReportLink for ExpressQuantumGrid by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSTeeChartC6.bpl=ExpressPrinting System ReportLink for TeeChart by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSDBTeeChartC6.bpl=ExpressPrinting System ReportLink for DBTeeChart by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSdxInsLnkC6.bpl=ExpressPrinting System ReportLink for ExpressInspector by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSdxOILnkC6.bpl=ExpressPrinting System ReportLink for ExpressRTTIInspector by Developer Express Inc.
+C:\Program Files\Developer Express Inc\Lib\Lib\dxPSdxMVLnkC6.bpl=ExpressPrinting System ReportLink for ExpressMasterView by Developer Express Inc.
+
+[HistoryLists\hlIncludePath]
+Count=19
+Item0=C:\Program Files\EurekaLog 4\CBuilder6;$(DevExpInc);$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc);$(TeeChartInc)
+Item1=C:\Program Files\EurekaLog 4\CBuilder6;$(DevExpInc);$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc)
+Item2=$(DevExpInc);$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc)
+Item3=C:\Program Files\Developer Express Inc\ExpressNavBar\C++Builder 6\Lib;..\..;$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc)
+Item4=$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc)
+Item5=..\..;$(OrpheusInc);$(ShellShockInc);$(SysToolsInc);$(RaizeInc);$(CodeSiteInc);$(BCB)\include;$(BCB)\include\vcl;$(AbakusInc)
+Item6=..;..\TOOLS\VCLUTILS\EXPANDABLEDIALOG;D:\Program Files\Raize\CS2\LibBCB5\;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;d:\PROGRAM FILES\Borland\CBuilder5\Bin\;E:\Raize\RC25\LibBCB5\;D:\Program Files\TurboPower\SYSTOOLS\;d:\program files\Turbopower\ShellShock\hpp5\;$(BCB)\include;$(BCB)\include\vcl;d:\abakus\cb5\
+Item7=..;..\TOOLS\VCLUTILS\EXPANDABLEDIALOG;c:\Program Files\Raize\CS2\LibBCB5\;c:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;c:\PROGRAM FILES\Borland\CBuilder5\Bin\;c:\Raize\RC25\LibBCB5\;c:\Program Files\TurboPower\SYSTOOLS\;c:\program files\Turbopower\ShellShock\hpp5\;$(BCB)\include;$(BCB)\include\vcl;c:\abakus\cb5\
+Item8=D:\Program Files\Raize\CS2\LibBCB5\;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\hpp5\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item9=D:\Program Files\Raize\CS2\LibBCB5;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\hpp5\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item10=d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\hpp5\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item11=d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\hpp5;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item12=d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item13=d:\program files\Turbopower\SysTools;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item14=D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item15=D:\PROGRA~1\TURBOP~1\SHELLS~1;..\..;D:\PROGRA~1\TURBOP~1\Orpheus\hpp5\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item16=D:\PROGRA~1\TURBOP~1\Orpheus\hpp5;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item17=D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\include;$(BCB)\include\vcl
+Item18=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=17
+Item0=C:\Program Files\EurekaLog 4\CBuilder6;$(DevExpLib);$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib);$(TeeChartLib)
+Item1=C:\Program Files\EurekaLog 4\CBuilder6;$(DevExpLib);$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib)
+Item2=$(DevExpLib);$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib)
+Item3=C:\Program Files\Developer Express Inc\ExpressGDI+ Library\C++Builder 6\Lib;C:\Program Files\Developer Express Inc\XP Theme Manager\C++Builder 6\Lib;C:\Program Files\Developer Express Inc\ExpressNavBar\C++Builder 6\Lib;..\..;$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib)
+Item4=$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib)
+Item5=..\..;$(BCB)\Projects\Lib;$(OrpheusLib);$(ShellShockLib);$(SysToolsLib);$(CodeSiteLib);$(RaizeLib);$(BCB)\lib\obj;$(BCB)\lib;$(AbakusLib)
+Item6=C:\Program Files\Raize\CS2\LibBCB6;C:\Program Files\Raize\RC25\LibBCB6;..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;..\TOOLS\VCLUTILS\EXPANDABLEDIALOG;D:\Program Files\Raize\CS2\LibBCB5\;E:\voyager\winmsec\gs1010\;E:\voyager\winvpg\;D:\PROGRA~1\TURBOP~1\Orpheus\;d:\PROGRAM FILES\Borland\CBuilder5\Bin\;E:\Raize\RC25\LibBCB5\;D:\SYSTOOLS\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;d:\abakus\cb5\;d:\program files\Turbopower\ShellShock\
+Item7=..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;..\TOOLS\VCLUTILS\EXPANDABLEDIALOG;D:\Program Files\Raize\CS2\LibBCB5\;E:\voyager\winmsec\gs1010\;E:\voyager\winvpg\;D:\PROGRA~1\TURBOP~1\Orpheus\;d:\PROGRAM FILES\Borland\CBuilder5\Bin\;E:\Raize\RC25\LibBCB5\;D:\SYSTOOLS\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;d:\abakus\cb5\;d:\program files\Turbopower\ShellShock\
+Item8=..;c:\PROGRA~1\TURBOP~1\SYSTOOLS\;..\TOOLS\VCLUTILS\EXPANDABLEDIALOG;c:\Program Files\Raize\CS2\LibBCB5\;c:\PROGRA~1\TURBOP~1\Orpheus\;c:\PROGRAM FILES\Borland\CBuilder5\Bin\;c:\Raize\RC25\LibBCB5\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;c:\abakus\cb5\;c:\program files\Turbopower\ShellShock\
+Item9=D:\Program Files\Raize\CS2\LibBCB5\;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item10=D:\Program Files\Raize\CS2\LibBCB5;d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item11=d:\program files\Turbopower\SysTools\;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item12=d:\program files\Turbopower\SysTools;D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item13=D:\PROGRA~1\TURBOP~1\SHELLS~1\;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item14=D:\PROGRA~1\TURBOP~1\SHELLS~1;..\..;D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item15=D:\PROGRA~1\TURBOP~1\SYSTOOLS\;D:\PROGRA~1\TURBOP~1\Orpheus\;E:\Raize\RC25\LibBCB5\;$(BCB)\lib\obj;$(BCB)\lib
+Item16=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=3
+Item0=_DEBUG;NO_WIN32_LEAN_AND_MEAN;EUREKALOG
+Item1=_DEBUG;NO_WIN32_LEAN_AND_MEAN
+Item2=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=Objs
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=c:\Voyager\Runs\RemoteEthernet 1 0
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
+
+
+[Exception Log]
+EurekaLog Version=423
+Activate=1
+Activate Handle=1
+Save Log File=1
+Foreground Tab=1
+EurekaLogLook=0
+Freeze Activate=0
+Freeze Timeout=60
+Freeze Message=The application seems to be frozen.
+SMTP Host=
+SMTP UserID=
+SMTP Password=
+Mute Mode=0
+Append to Log=0
+Show TerminateBtn=1
+TerminateBtn Operation=1
+Errors Number=32
+Errors Terminate=3
+Email Address=
+Email Object=
+Email Send Options=0
+Email Send Confirm=2
+Output Path=
+Count=0
+EMail Message Line Count=0
+loSaveAllErrors=0
+loNewLogForNewVersion=0
+loNoDuplicateErrors=0
+AppStartDate=1
+AppName=1
+AppVersionNumber=1
+ExcDate=1
+ExcAddress=1
+ExcModule=1
+ExcType=1
+ExcMessage=1
+ActCtlsFormClass=1
+ActCtlsFormText=1
+ActCtlsControlClass=1
+ActCtlsControlText=1
+CmpName=1
+CmpTotalMemory=1
+CmpFreeMemory=1
+CmpTotalDisk=1
+CmpFreeDisk=1
+OSType=1
+OSBuildN=1
+OSLanguage=1
+Count mtInformationMsgCaption=1
+mtInformationMsgCaption0=Information.
+Count mtQuestionMsgCaption=1
+mtQuestionMsgCaption0=Question.
+Count mtDialog_Caption=1
+mtDialog_Caption0=Error.
+Count mtDialog_ErrorMsgCaption=2
+mtDialog_ErrorMsgCaption0=An error has occurred during program execution.
+mtDialog_ErrorMsgCaption1=Please read the following information for further details.
+Count mtDialog_GeneralCaption=1
+mtDialog_GeneralCaption0=General
+Count mtDialog_GeneralHeader=1
+mtDialog_GeneralHeader0=General Information
+Count mtDialog_DetailCaption=1
+mtDialog_DetailCaption0=Details
+Count mtDialog_DetailHeader=1
+mtDialog_DetailHeader0=Detailed Information
+Count mtDialog_OKButtonCaption=1
+mtDialog_OKButtonCaption0=&OK
+Count mtDialog_TerminateButtonCaption=1
+mtDialog_TerminateButtonCaption0=&Terminate
+Count mtDialog_RestartButtonCaption=1
+mtDialog_RestartButtonCaption0=&Restart
+Count mtDialog_DetailsButtonCaption=1
+mtDialog_DetailsButtonCaption0=&Details
+Count mtLog_AppHeader=1
+mtLog_AppHeader0=Application
+Count mtLog_AppStartDate=1
+mtLog_AppStartDate0=Start Date
+Count mtLog_AppName=1
+mtLog_AppName0=Name/Description
+Count mtLog_AppVersionNumber=1
+mtLog_AppVersionNumber0=Version Number
+Count mtLog_ExcHeader=1
+mtLog_ExcHeader0=Exception
+Count mtLog_ExcDate=1
+mtLog_ExcDate0=Date
+Count mtLog_ExcAddress=1
+mtLog_ExcAddress0=Address
+Count mtLog_ExcModule=1
+mtLog_ExcModule0=Module
+Count mtLog_ExcType=1
+mtLog_ExcType0=Type
+Count mtLog_ExcMessage=1
+mtLog_ExcMessage0=Message
+Count mtLog_ActCtrlsHeader=1
+mtLog_ActCtrlsHeader0=Active Controls
+Count mtLog_ActCtrlsFormClass=1
+mtLog_ActCtrlsFormClass0=Form Class
+Count mtLog_ActCtrlsFormText=1
+mtLog_ActCtrlsFormText0=Form Text
+Count mtLog_ActCtrlsControlClass=1
+mtLog_ActCtrlsControlClass0=Control Class
+Count mtLog_ActCtrlsControlText=1
+mtLog_ActCtrlsControlText0=Control Text
+Count mtLog_CmpHeader=1
+mtLog_CmpHeader0=Computer
+Count mtLog_CmpName=1
+mtLog_CmpName0=Name
+Count mtLog_CmpTotalMemory=1
+mtLog_CmpTotalMemory0=Total Memory
+Count mtLog_CmpFreeMemory=1
+mtLog_CmpFreeMemory0=Free Memory
+Count mtLog_CmpTotalDisk=1
+mtLog_CmpTotalDisk0=Total Disk
+Count mtLog_CmpFreeDisk=1
+mtLog_CmpFreeDisk0=Free Disk
+Count mtLog_OSHeader=1
+mtLog_OSHeader0=Operating System
+Count mtLog_OSType=1
+mtLog_OSType0=Type
+Count mtLog_OSBuildN=1
+mtLog_OSBuildN0=Build #
+Count mtLog_OSLanguage=1
+mtLog_OSLanguage0=Language
+Count mtModule_Address=1
+mtModule_Address0=Address
+Count mtModule_Name=1
+mtModule_Name0=Module
+Count mtModule_Unit=1
+mtModule_Unit0=Unit
+Count mtModule_Class=1
+mtModule_Class0=Class
+Count mtModule_Procedure=1
+mtModule_Procedure0=Procedure/Method
+Count mtModule_Line=1
+mtModule_Line0=Line
+Count mtEmail_ConfirmMsg=1
+mtEmail_ConfirmMsg0=May I send an email with occurred error(s) to the author of the program ?
+Count mtEmail_SendMsg=1
+mtEmail_SendMsg0=I will now send an email with the error(s) that occurred to the author of the program.
+
+

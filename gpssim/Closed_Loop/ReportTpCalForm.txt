@@ -1,0 +1,4 @@
+Code difference error at 299908 on channel 1
+Code difference error at 599908 on channel 6
+Code difference error at 899906 on channel 10
+Code difference error at 1199904 on channel 0

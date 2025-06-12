@@ -1,0 +1,180 @@
+object InitGeoFrame: TInitGeoFrame
+  Left = 0
+  Top = 0
+  Width = 704
+  Height = 464
+  TabOrder = 0
+  object OvcLabel2: TOvcLabel
+    Left = 0
+    Top = 0
+    Width = 704
+    Height = 57
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'InitGeo'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -37
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsUnderline]
+    ParentFont = False
+  end
+  object OvcLabel1: TOvcLabel
+    Left = 8
+    Top = 91
+    Width = 121
+    Height = 35
+    Alignment = taRightJustify
+    Caption = 'Date:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object OvcLabel3: TOvcLabel
+    Left = 304
+    Top = 91
+    Width = 89
+    Height = 35
+    Alignment = taRightJustify
+    Caption = 'Time:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object OvcLabel4: TOvcLabel
+    Left = 192
+    Top = 171
+    Width = 89
+    Height = 35
+    Alignment = taRightJustify
+    Caption = 'Lat:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object OvcLabel5: TOvcLabel
+    Left = 192
+    Top = 219
+    Width = 89
+    Height = 35
+    Alignment = taRightJustify
+    Caption = 'Lon:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object OvcLabel6: TOvcLabel
+    Left = 192
+    Top = 267
+    Width = 89
+    Height = 35
+    Alignment = taRightJustify
+    Caption = 'Alt:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DatePicker: TDateTimePicker
+    Left = 144
+    Top = 96
+    Width = 145
+    Height = 24
+    CalAlignment = dtaLeft
+    Date = 37325.720484294
+    Time = 37325.720484294
+    DateFormat = dfShort
+    DateMode = dmComboBox
+    Kind = dtkDate
+    ParseInput = False
+    TabOrder = 0
+  end
+  object TimePicker: TDateTimePicker
+    Left = 400
+    Top = 96
+    Width = 145
+    Height = 24
+    CalAlignment = dtaLeft
+    Date = 37325.720484294
+    Time = 37325.720484294
+    DateFormat = dfShort
+    DateMode = dmComboBox
+    Kind = dtkTime
+    ParseInput = False
+    TabOrder = 1
+  end
+  object LatEdt: TOvcNumericField
+    Left = 296
+    Top = 176
+    Width = 130
+    Height = 24
+    Cursor = crIBeam
+    DataType = nftDouble
+    CaretOvr.Shape = csBlock
+    EFColors.Disabled.BackColor = clWindow
+    EFColors.Disabled.TextColor = clGrayText
+    EFColors.Error.BackColor = clRed
+    EFColors.Error.TextColor = clBlack
+    EFColors.Highlight.BackColor = clHighlight
+    EFColors.Highlight.TextColor = clHighlightText
+    Options = []
+    PictureMask = '##########'
+    TabOrder = 2
+    RangeHigh = {73B2DBB9838916F2FE43}
+    RangeLow = {73B2DBB9838916F2FEC3}
+  end
+  object LonEdt: TOvcNumericField
+    Left = 296
+    Top = 224
+    Width = 130
+    Height = 24
+    Cursor = crIBeam
+    DataType = nftDouble
+    CaretOvr.Shape = csBlock
+    EFColors.Disabled.BackColor = clWindow
+    EFColors.Disabled.TextColor = clGrayText
+    EFColors.Error.BackColor = clRed
+    EFColors.Error.TextColor = clBlack
+    EFColors.Highlight.BackColor = clHighlight
+    EFColors.Highlight.TextColor = clHighlightText
+    Options = []
+    PictureMask = '##########'
+    TabOrder = 3
+    RangeHigh = {73B2DBB9838916F2FE43}
+    RangeLow = {73B2DBB9838916F2FEC3}
+  end
+  object AltEdt: TOvcNumericField
+    Left = 296
+    Top = 272
+    Width = 130
+    Height = 24
+    Cursor = crIBeam
+    DataType = nftDouble
+    CaretOvr.Shape = csBlock
+    EFColors.Disabled.BackColor = clWindow
+    EFColors.Disabled.TextColor = clGrayText
+    EFColors.Error.BackColor = clRed
+    EFColors.Error.TextColor = clBlack
+    EFColors.Highlight.BackColor = clHighlight
+    EFColors.Highlight.TextColor = clHighlightText
+    Options = []
+    PictureMask = '##########'
+    TabOrder = 4
+    RangeHigh = {73B2DBB9838916F2FE43}
+    RangeLow = {73B2DBB9838916F2FEC3}
+  end
+end

@@ -1,0 +1,85 @@
+;Copyright 2003 Systran Corporation
+
+[Version]
+Signature=$CHICAGO$
+Class=SCRAMNetNetworkDevice
+ClassGUID={A2741962-C2D2-4619-9A4E-2AD2E371DE4F}  
+Provider=%Systran%
+
+[classInstall32]
+AddReg=cls.registry
+
+[cls.registry]
+HKR,,,,%ClassName%
+
+[DestinationDirs]
+DefaultDestDir=10
+scrpci.CopyFiles=10,system32\drivers
+scrpci.CopyFiles.NT=10,system32\drivers
+
+[Manufacturer]
+%Mfg%=SCRAMNetModels
+
+[SCRAMNetModels]
+%DevDesc1% = scrpci.DDInst,PCI\VEN_11b0&DEV_4750&SUBSYS_00000000
+%DevDesc2% = scrpci.DDInst,PCI\VEN_11b0&DEV_4750&SUBSYS_53011387
+%DevDesc3% = scrpci.DDInst,PCI\VEN_11b0&DEV_4750&SUBSYS_53021387
+%DevDesc4% = scrpci.DDInst,PCI\VEN_11b0&DEV_4750
+
+;--------------------------------------------------
+; Win 9x
+;--------------------------------------------------
+[scrpci.DDInst]
+CopyFiles=scrpci.CopyFiles
+AddReg=scrpci.AddReg
+
+[scrpci.CopyFiles]
+wdmscram.sys,,,2
+
+[scrpci.AddReg]
+HKR,,DriverDesc,0,scrpciInterface
+HKR,,DevLoader,0,*NTKERN
+HKR,,NTMPDriver,0,wdmscram.sys
+
+;--------------------------------------------------
+; 2000
+;--------------------------------------------------
+[scrpci.DDInst.NT]
+CopyFiles=scrpci.CopyFiles.NT
+AddReg=scrpci.AddReg.NT
+DriverVer=10/31/2003,2.08
+
+[scrpci.CopyFiles.NT]
+wdmscram.sys,,,2
+
+[scrpci.AddReg.NT]
+HKR,,DriverDesc,0,scrpciInterface
+
+[scrpci.DDInst.NT.Services]
+AddService=wdmscram,2,scrpci.DrvService.NT
+
+[scrpci.DrvService.NT]
+ServiceType=1
+StartType =3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\wdmscram.sys
+
+;--------------------------------------------------
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=%DiskDesc%,,0
+
+[SourceDisksFiles]
+wdmscram.sys=1
+
+[Strings]
+Systran   = "Systran"
+Mfg       = "Systran Corp."
+ClassName = "SCRAMNet+ or RAMplex Network Device"
+DiskDesc  = "SCRAMNet Installation CD-ROM"
+DevDesc1  = "SCRAMNet SC150 PCI/PMC/CPCI Card"
+DevDesc2  = "SCRAMNet SC150e PCI/PMC/CPCI Card"
+DevDesc3  = "RAMplex PCI/PMC/CPCI Card"
+DevDesc4  = "SCRAMNet PCI/PMC/CPCI Card "

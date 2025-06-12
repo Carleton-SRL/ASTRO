@@ -1,0 +1,3 @@
+[Default]
+SCDB=C:\Program Files\Microsoft Visual Studio\Common\VSS\srcsafe.ini
+SCPATH=$/RemoteDriver

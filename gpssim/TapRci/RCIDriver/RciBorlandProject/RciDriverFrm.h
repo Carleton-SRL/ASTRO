@@ -1,0 +1,56 @@
+//---------------------------------------------------------------------------
+
+#ifndef RciDriverFrmH
+#define RciDriverFrmH
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include "o32flxbn.hpp"
+#include "ovclabel.hpp"
+#include <Buttons.hpp>
+#include "CSIntf.hpp"
+#include "RzButton.hpp"
+#include "RzPanel.hpp"
+#include "RzSplit.hpp"
+#include <ExtCtrls.hpp>
+
+#include "GpibIntOptionsFram.h"
+#include "RemoteTypes.h"
+#include "RciRunFrm.h"
+
+//---------------------------------------------------------------------------
+class TRciDriverForm : public TForm
+{
+__published:	// IDE-managed Components
+   TRzPanel *BottomPnl;
+   TRzSizePanel *RightSizePnl;
+   TRzPanel *RightPnl;
+   TRzPanel *LeftPnl;
+   TRzButton *StartBtn;
+   TRzButton *CancelBtn;
+   void __fastcall CancelBtnClick(TObject *Sender);
+   void __fastcall InterfaceFlexBtnItemChange(TObject *Sender,
+          int &OldItem, int &NewItem);
+   void __fastcall StartBtnClick(TObject *Sender);
+private:	// User declarations
+
+   TFrame      *IntOptionsFrame;
+   eIntType    IntType;
+   TRciRunForm *RciRunForm;
+
+   eIntType const GetIntTypeFromItem(const int ItemIndex) const;
+   void SetIntType(const eIntType NewIntType);
+   void SetIntTypeGpib();
+   void SetIntTypeSerial();
+   void SetIntTypeEthernet();
+
+
+public:		// User declarations
+   __fastcall TRciDriverForm(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TRciDriverForm *RciDriverForm;
+//---------------------------------------------------------------------------
+#endif

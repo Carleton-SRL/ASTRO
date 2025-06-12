@@ -1,0 +1,1416 @@
+Application...
+  Start Date      : 03/25/2004 11:17:02
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 03/25/2004 11:17:59
+  Address: 00637EA2
+  Module : RemoteDriver.exe
+  Type   : EAccessViolation
+  Message: Access violation at address 00637EA2 in module 'RemoteDriver.exe'. Read of address 00000005.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2047 Mb
+  Free Memory : 1425 Mb
+  Total Disk  : 102.53 Gb
+  Free Disk   : 55.52 Gb
+
+Operating System...
+  Type    : Microsoft Windows 2000
+  Build # : 2195
+  Language: English (United States)
+
+------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method       |Line|
+------------------------------------------------------------------------------------------------
+|77F8EB6E|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F8EB45|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77E14775|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77FCC357|ntdll.dll       |                    |                  |RtlAllocateHeap        |    |
+|77FA1601|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|77FCC87D|ntdll.dll       |                    |                  |RtlFreeHeap            |    |
+|77FCC87D|ntdll.dll       |                    |                  |RtlFreeHeap            |    |
+|77F44A3F|GDI32.dll       |                    |                  |CreateCompatibleBitmap |    |
+|77F42E90|GDI32.dll       |                    |                  |BitBlt                 |    |
+|77F8EB6E|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F8EB25|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77E1738E|USER32.dll      |                    |                  |MBToWCSEx              |    |
+|77E41E2A|USER32.dll      |                    |                  |DrawTextExA            |    |
+|77E41DFB|USER32.dll      |                    |                  |DrawTextExA            |    |
+|77E22B68|USER32.dll      |                    |                  |DrawTextA              |    |
+|77E22B2A|USER32.dll      |                    |                  |DrawTextA              |    |
+|77F4CF2F|GDI32.dll       |                    |                  |GetCurrentPositionEx   |    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|00675CED|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|00675CED|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|77F43BBD|GDI32.dll       |                    |                  |IntersectClipRect      |    |
+|77F4417C|GDI32.dll       |                    |                  |RestoreDC              |    |
+|77F44088|GDI32.dll       |                    |                  |RestoreDC              |    |
+|77E165B6|USER32.dll      |                    |                  |EndPaint               |    |
+|77F8EB6E|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F8EB45|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77E16BB7|USER32.dll      |                    |                  |PtInRect               |    |
+|77FA1601|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|77FCC87D|ntdll.dll       |                    |                  |RtlFreeHeap            |    |
+|0041E826|RemoteDriver.exe|Interface.cpp       |                  |TInterface             |133 |
+|0041C099|RemoteDriver.exe|CLControl.cpp       |                  |TCLControl             |313 |
+|7C59B977|KERNEL32.DLL    |                    |                  |GetExitCodeThread      |    |
+|77E16B2B|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|00414A52|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |186 |
+|004149E0|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |179 |
+|00413E65|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|CLCTimerTimer          |136 |
+|00405980|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete           |117 |
+|00405830|RemoteDriver.exe|_alloc.h            |_STL              |__new_alloc.deallocate |135 |
+|00423193|RemoteDriver.exe|_alloc.h            |                  |_STL                   |360 |
+|00422868|RemoteDriver.exe|_alloc.h            |                  |_STL                   |350 |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E15D7D|USER32.dll      |                    |                  |IsWindowVisible        |    |
+|77E156CF|USER32.dll      |                    |                  |PeekMessageA           |    |
+|77E15B4C|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|77E15B46|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|00401DB7|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                |45  |
+------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 03/25/2004 14:59:27
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 03/25/2004 15:00:08
+  Address: 0064F466
+  Module : RemoteDriver.exe
+  Type   : EAccessViolation
+  Message: Access violation at address 0064F466 in module 'RemoteDriver.exe'. Read of address 00000005.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2047 Mb
+  Free Memory : 1500 Mb
+  Total Disk  : 102.53 Gb
+  Free Disk   : 55.02 Gb
+
+Operating System...
+  Type    : Microsoft Windows 2000
+  Build # : 2195
+  Language: English (United States)
+
+-------------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                      |Class                   |Procedure/Method        |Line|
+-------------------------------------------------------------------------------------------------------------
+|77F8EB6E|ntdll.dll       |                          |                        |RtlUnwind               |    |
+|77F8EB45|ntdll.dll       |                          |                        |RtlUnwind               |    |
+|77E14775|USER32.dll      |                          |                        |DefWindowProcA          |    |
+|77FCC357|ntdll.dll       |                          |                        |RtlAllocateHeap         |    |
+|77FA1601|ntdll.dll       |                          |                        |KiUserApcDispatcher     |    |
+|77FCC87D|ntdll.dll       |                          |                        |RtlFreeHeap             |    |
+|77FCC87D|ntdll.dll       |                          |                        |RtlFreeHeap             |    |
+|77FCC87D|ntdll.dll       |                          |                        |RtlFreeHeap             |    |
+|77FCC87D|ntdll.dll       |                          |                        |RtlFreeHeap             |    |
+|77F8EB6E|ntdll.dll       |                          |                        |RtlUnwind               |    |
+|77F8EB25|ntdll.dll       |                          |                        |RtlUnwind               |    |
+|77E1738E|USER32.dll      |                          |                        |MBToWCSEx               |    |
+|77E41E2A|USER32.dll      |                          |                        |DrawTextExA             |    |
+|77F89134|ntdll.dll       |                          |                        |RtlLeaveCriticalSection |    |
+|7C578232|KERNEL32.DLL    |                          |                        |SetLastError            |    |
+|7C5814D3|KERNEL32.DLL    |                          |                        |GetPrivateProfileStringA|    |
+|77F4CF2F|GDI32.dll       |                          |                        |GetCurrentPositionEx    |    |
+|77F89134|ntdll.dll       |                          |                        |RtlLeaveCriticalSection |    |
+|77F89134|ntdll.dll       |                          |                        |RtlLeaveCriticalSection |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas                 |                        |InternalLog             |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas                 |                        |InternalLog             |    |
+|77F43BBD|GDI32.dll       |                          |                        |IntersectClipRect       |    |
+|77F4417C|GDI32.dll       |                          |                        |RestoreDC               |    |
+|77F44088|GDI32.dll       |                          |                        |RestoreDC               |    |
+|77E165B6|USER32.dll      |                          |                        |EndPaint                |    |
+|77F8EB6E|ntdll.dll       |                          |                        |RtlUnwind               |    |
+|77F8EB45|ntdll.dll       |                          |                        |RtlUnwind               |    |
+|77E16BB7|USER32.dll      |                          |                        |PtInRect                |    |
+|77FA1601|ntdll.dll       |                          |                        |KiUserApcDispatcher     |    |
+|77FCC87D|ntdll.dll       |                          |                        |RtlFreeHeap             |    |
+|0041E87A|RemoteDriver.exe|Interface.cpp             |                        |TInterface              |133 |
+|0041C0ED|RemoteDriver.exe|CLControl.cpp             |                        |TCLControl              |313 |
+|7C59B977|KERNEL32.DLL    |                          |                        |GetExitCodeThread       |    |
+|77E16B2B|USER32.dll      |                          |                        |CallWindowProcA         |    |
+|00414AA6|RemoteDriver.exe|ClosedLoopRunFrm.cpp      |TClosedLoopRunForm      |Terminate               |186 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp      |TClosedLoopRunForm      |Terminate               |179 |
+|00413EB9|RemoteDriver.exe|ClosedLoopRunFrm.cpp      |TClosedLoopRunForm      |CLCTimerTimer           |136 |
+|004059D4|RemoteDriver.exe|new.cpp                   |_STL                    |__stl_delete            |117 |
+|00405884|RemoteDriver.exe|_alloc.h                  |_STL                    |__new_alloc.deallocate  |135 |
+|004231E7|RemoteDriver.exe|_alloc.h                  |                        |_STL                    |360 |
+|004228BC|RemoteDriver.exe|_alloc.h                  |                        |_STL                    |350 |
+|00422914|RemoteDriver.exe|_vector.h                 |                        |_STL                    |255 |
+|00424E38|RemoteDriver.exe|EthernetIntOptionsFram.cpp|TEthernetIntOptionsFrame|GetOptionsChanged       |258 |
+|77F89134|ntdll.dll       |                          |                        |RtlLeaveCriticalSection |    |
+|77E15D7D|USER32.dll      |                          |                        |IsWindowVisible         |    |
+|77E156CF|USER32.dll      |                          |                        |PeekMessageA            |    |
+|77E15B4C|USER32.dll      |                          |                        |DispatchMessageA        |    |
+|77E15B46|USER32.dll      |                          |                        |DispatchMessageA        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp          |                        |WinMain                 |47  |
+-------------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 03/25/2004 15:11:07
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 03/25/2004 15:11:41
+  Address: 0064F466
+  Module : RemoteDriver.exe
+  Type   : EAccessViolation
+  Message: Access violation at address 0064F466 in module 'RemoteDriver.exe'. Read of address 00000005.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2047 Mb
+  Free Memory : 1521 Mb
+  Total Disk  : 102.53 Gb
+  Free Disk   : 54.97 Gb
+
+Operating System...
+  Type    : Microsoft Windows 2000
+  Build # : 2195
+  Language: English (United States)
+
+------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method       |Line|
+------------------------------------------------------------------------------------------------
+|77F8EB6E|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F8EB45|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77FA1601|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|77E16B3F|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E16B2B|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E16B2B|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004E9969|RemoteDriver.exe|Rzpanel.pas         |TRzCustomPanel    |CursorPosition         |    |
+|77F8EB6E|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F8EB25|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|77F8C274|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F8C268|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F8C274|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F8C268|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F8EB6E|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F8EB45|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77FA1601|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|0041E87A|RemoteDriver.exe|Interface.cpp       |                  |TInterface             |133 |
+|0041C0ED|RemoteDriver.exe|CLControl.cpp       |                  |TCLControl             |313 |
+|7C59B977|KERNEL32.DLL    |                    |                  |GetExitCodeThread      |    |
+|00414AA6|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |186 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |179 |
+|00414B1A|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|FormClose              |201 |
+|77E1A3BD|USER32.dll      |                    |                  |CallNextHookEx         |    |
+|77F44406|GDI32.dll       |                    |                  |GetTextExtentPointW    |    |
+|77E14775|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E16B3F|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E16B2B|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77F4CF2F|GDI32.dll       |                    |                  |GetCurrentPositionEx   |    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|004C5770|RemoteDriver.exe|Rzcommon.pas        |                  |DrawSides              |    |
+|77E14775|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E14775|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E16B3F|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E16B2B|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004059D4|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete           |117 |
+|00405884|RemoteDriver.exe|_alloc.h            |_STL              |__new_alloc.deallocate |135 |
+|004231E7|RemoteDriver.exe|_alloc.h            |                  |_STL                   |360 |
+|004228BC|RemoteDriver.exe|_alloc.h            |                  |_STL                   |350 |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F89134|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E156CF|USER32.dll      |                    |                  |PeekMessageA           |    |
+|77E15B4C|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|77E15B46|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                |47  |
+------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 08/09/2006 13:09:05
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 08/09/2006 13:09:48
+  Address: 0064F466
+  Module : RemoteDriver.exe
+  Type   : EAccessViolation
+  Message: Access violation at address 0064F466 in module 'RemoteDriver.exe'. Read of address 00000005.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TClosedLoopRunForm
+  Control Text : Closed Loop Control
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2047 Mb
+  Free Memory : 1356 Mb
+  Total Disk  : 136.72 Gb
+  Free Disk   : 69.02 Gb
+
+Operating System...
+  Type    : Microsoft Windows 2000
+  Build # : 2195
+  Language: English (United States)
+
+------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method       |Line|
+------------------------------------------------------------------------------------------------
+|77F91BC1|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004E9969|RemoteDriver.exe|Rzpanel.pas         |TRzCustomPanel    |CursorPosition         |    |
+|77FCAEE8|ntdll.dll       |                    |                  |RtlAllocateHeap        |    |
+|77FACDA5|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|77F86772|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F86766|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F86772|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77F86766|ntdll.dll       |                    |                  |RtlReleasePebLock      |    |
+|77FCAE10|ntdll.dll       |                    |                  |RtlAllocateHeap        |    |
+|77F91BC1|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|0041E87A|RemoteDriver.exe|Interface.cpp       |                  |TInterface             |133 |
+|0041C0ED|RemoteDriver.exe|CLControl.cpp       |                  |TCLControl             |313 |
+|7C59BB19|KERNEL32.dll    |                    |                  |GetExitCodeThread      |    |
+|00414AA6|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |186 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |179 |
+|00414B1A|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|FormClose              |201 |
+|77FCAE10|ntdll.dll       |                    |                  |RtlAllocateHeap        |    |
+|77F44426|GDI32.dll       |                    |                  |GetTextExtentPointW    |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77F4D409|GDI32.dll       |                    |                  |GetCurrentPositionEx   |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|004C5770|RemoteDriver.exe|Rzcommon.pas        |                  |DrawSides              |    |
+|004C56B8|RemoteDriver.exe|Rzcommon.pas        |                  |DrawSides              |    |
+|004C5CC2|RemoteDriver.exe|Rzcommon.pas        |                  |DrawBorderSides        |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004059D4|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete           |117 |
+|00405884|RemoteDriver.exe|_alloc.h            |_STL              |__new_alloc.deallocate |135 |
+|004231E7|RemoteDriver.exe|_alloc.h            |                  |_STL                   |360 |
+|004228BC|RemoteDriver.exe|_alloc.h            |                  |_STL                   |350 |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E27ED1|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|77E27ECB|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                |47  |
+------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 08/09/2006 13:10:08
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 08/09/2006 13:10:18
+  Address: 00612BFD
+  Module : RemoteDriver.exe
+  Type   : ESocketError
+  Message: Windows socket error: Only one usage of each socket address (protocol/network address/port)  is normally permitted (10048), on API 'bind'.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TRzButton
+  Control Text : OK
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2047 Mb
+  Free Memory : 1362 Mb
+  Total Disk  : 136.72 Gb
+  Free Disk   : 69.02 Gb
+
+Operating System...
+  Type    : Microsoft Windows 2000
+  Build # : 2195
+  Language: English (United States)
+
+----------------------------------------------------------------------------------------------
+|Address |Module          |Unit                 |Class          |Procedure/Method       |Line|
+----------------------------------------------------------------------------------------------
+|77FCAE10|ntdll.dll       |                     |               |RtlAllocateHeap        |    |
+|77F91BC1|ntdll.dll       |                     |               |KiUserApcDispatcher    |    |
+|7C59BC39|KERNEL32.dll    |                     |               |RaiseException         |    |
+|7C59BC39|KERNEL32.dll    |                     |               |RaiseException         |    |
+|77FCB7BD|ntdll.dll       |                     |               |RtlFreeHeap            |    |
+|7C59BC39|KERNEL32.dll    |                     |               |RaiseException         |    |
+|77F87FC0|ntdll.dll       |                     |               |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                     |               |RtlLeaveCriticalSection|    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas            |               |SaveLog                |    |
+|77F87FC0|ntdll.dll       |                     |               |RtlLeaveCriticalSection|    |
+|00426F55|RemoteDriver.exe|Ethernet.cpp         |               |TEthernetServer        |503 |
+|00426E1C|RemoteDriver.exe|Ethernet.cpp         |               |TEthernetServer        |477 |
+|0041E554|RemoteDriver.exe|Interface.cpp        |               |TInterface             |58  |
+|0041E38C|RemoteDriver.exe|Interface.cpp        |               |TInterface             |27  |
+|0041BD0C|RemoteDriver.exe|CLControl.cpp        |TCLControl     |InitializeInterface    |300 |
+|0041BB74|RemoteDriver.exe|CLControl.cpp        |TCLControl     |InitializeInterface    |264 |
+|0041AD05|RemoteDriver.exe|CLControl.cpp        |               |TCLControl             |83  |
+|00415BD4|RemoteDriver.exe|_construct.h         |               |_STL                   |81  |
+|00413861|RemoteDriver.exe|_vector.h            |               |_STL                   |330 |
+|0041A7C8|RemoteDriver.exe|CLControl.cpp        |               |TCLControl             |43  |
+|004134EA|RemoteDriver.exe|ClosedLoopRunFrm.cpp |               |TClosedLoopRunForm     |94  |
+|0041A524|RemoteDriver.exe|ClosedLoopSimType.cpp|               |TClosedLoopSimType     |14  |
+|0040379F|RemoteDriver.exe|RemoteMainFrm.cpp    |TRemoteMainForm|StartRun               |648 |
+|0041320C|RemoteDriver.exe|ClosedLoopRunFrm.cpp |               |TClosedLoopRunForm     |61  |
+|004037BF|RemoteDriver.exe|RemoteMainFrm.cpp    |TRemoteMainForm|StartRun               |650 |
+|004036C4|RemoteDriver.exe|RemoteMainFrm.cpp    |TRemoteMainForm|StartRun               |630 |
+|004036B7|RemoteDriver.exe|RemoteMainFrm.cpp    |TRemoteMainForm|OKBtnClick             |625 |
+|004AC1D8|RemoteDriver.exe|Rzbutton.pas         |TRzCustomButton|Click                  |    |
+|004AC9EB|RemoteDriver.exe|Rzbutton.pas         |TRzButton      |ChangeState            |    |
+|004AC736|RemoteDriver.exe|Rzbutton.pas         |TRzCustomButton|MouseUp                |    |
+|004059D4|RemoteDriver.exe|new.cpp              |_STL           |__stl_delete           |117 |
+|00405884|RemoteDriver.exe|_alloc.h             |_STL           |__new_alloc.deallocate |135 |
+|004231E7|RemoteDriver.exe|_alloc.h             |               |_STL                   |360 |
+|004228BC|RemoteDriver.exe|_alloc.h             |               |_STL                   |350 |
+|004231B8|RemoteDriver.exe|_construct.h         |               |_STL                   |115 |
+|00422F8F|RemoteDriver.exe|_construct.h         |               |_STL                   |122 |
+|00422F9C|RemoteDriver.exe|_vector.h            |               |_STL                   |83  |
+|77E2CDDB|USER32.dll      |                     |               |GetCapture             |    |
+|77E2CDCB|USER32.dll      |                     |               |GetCapture             |    |
+|77E3C9D8|USER32.dll      |                     |               |IsWindowVisible        |    |
+|77E27ED1|USER32.dll      |                     |               |DispatchMessageA       |    |
+|77E27ECB|USER32.dll      |                     |               |DispatchMessageA       |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp     |               |WinMain                |47  |
+----------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 08/09/2006 13:32:13
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 08/09/2006 14:08:13
+  Address: 0064F466
+  Module : RemoteDriver.exe
+  Type   : EAccessViolation
+  Message: Access violation at address 0064F466 in module 'RemoteDriver.exe'. Read of address 00000005.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2047 Mb
+  Free Memory : 1321 Mb
+  Total Disk  : 136.72 Gb
+  Free Disk   : 69.02 Gb
+
+Operating System...
+  Type    : Microsoft Windows 2000
+  Build # : 2195
+  Language: English (United States)
+
+------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method       |Line|
+------------------------------------------------------------------------------------------------
+|77F91BC1|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004E9969|RemoteDriver.exe|Rzpanel.pas         |TRzCustomPanel    |CursorPosition         |    |
+|77FACDA5|ntdll.dll       |                    |                  |RtlUnwind              |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog            |    |
+|77E3C323|USER32.dll      |                    |                  |WCSToMBEx              |    |
+|77F44A5F|GDI32.dll       |                    |                  |CreateCompatibleBitmap |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77F44A5F|GDI32.dll       |                    |                  |CreateCompatibleBitmap |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77FCAE10|ntdll.dll       |                    |                  |RtlAllocateHeap        |    |
+|77F91BC1|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|0041E87A|RemoteDriver.exe|Interface.cpp       |                  |TInterface             |133 |
+|0041C0ED|RemoteDriver.exe|CLControl.cpp       |                  |TCLControl             |313 |
+|7C59BB19|KERNEL32.dll    |                    |                  |GetExitCodeThread      |    |
+|00414AA6|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |186 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |179 |
+|00414B1A|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|FormClose              |201 |
+|004C61BC|RemoteDriver.exe|Rzcommon.pas        |                  |DrawFocusBorder        |    |
+|004AD867|RemoteDriver.exe|Rzbutton.pas        |TRzButton         |Paint                  |    |
+|77F47A81|GDI32.dll       |                    |                  |MoveToEx               |    |
+|77F4D409|GDI32.dll       |                    |                  |GetCurrentPositionEx   |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E3BA0D|USER32.dll      |                    |                  |EndPaint               |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E3B1EF|USER32.dll      |                    |                  |UpdateWindow           |    |
+|77E3B1D2|USER32.dll      |                    |                  |UpdateWindow           |    |
+|004AC23A|RemoteDriver.exe|Rzbutton.pas        |TRzCustomButton   |RepaintDisplay         |    |
+|004AC1EE|RemoteDriver.exe|Rzbutton.pas        |TRzCustomButton   |WMSetFocus             |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77F87FC0|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27E28|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E27E12|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|77E3C154|USER32.dll      |                    |                  |DefWindowProcW         |    |
+|77E27F80|USER32.dll      |                    |                  |PostMessageA           |    |
+|77E27A5B|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27A3A|USER32.dll      |                    |                  |DefWindowProcA         |    |
+|77E27ED1|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|77E27ECB|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                |47  |
+------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 12/18/2007 19:19:33
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 12/18/2007 19:21:40
+  Address: 0064F466
+  Module : RemoteDriver.exe
+  Type   : EAccessViolation
+  Message: Access violation at address 0064F466 in module 'RemoteDriver.exe'. Read of address 00000011.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2046 Mb
+  Free Memory : 1352 Mb
+  Total Disk  : 232.88 Gb
+  Free Disk   : 119.45 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method        |Line|
+-------------------------------------------------------------------------------------------------
+|7C90EAF5|ntdll.dll       |                    |                  |KiUserApcDispatcher     |    |
+|77F643CB|SHLWAPI.dll     |                    |                  |SHRegGetValueW          |    |
+|77F643D8|SHLWAPI.dll     |                    |                  |SHRegGetValueW          |    |
+|7C9297BC|ntdll.dll       |                    |                  |RtlUpperChar            |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|7C832B8A|kernel32.dll    |                    |                  |GetPrivateProfileStringA|    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog             |    |
+|0068D2B1|RemoteDriver.exe|Ecore.pas           |                  |InternalLog             |    |
+|7E41BD41|USER32.dll      |                    |                  |PtInRect                |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA         |    |
+|7C90EAF5|ntdll.dll       |                    |                  |KiUserApcDispatcher     |    |
+|77F643CB|SHLWAPI.dll     |                    |                  |SHRegGetValueW          |    |
+|77F643D8|SHLWAPI.dll     |                    |                  |SHRegGetValueW          |    |
+|0041E87A|RemoteDriver.exe|Interface.cpp       |                  |TInterface              |133 |
+|0041C0ED|RemoteDriver.exe|CLControl.cpp       |                  |TCLControl              |313 |
+|7C821435|kernel32.dll    |                    |                  |GetExitCodeThread       |    |
+|004059D4|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete            |117 |
+|00414AA6|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate               |186 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate               |179 |
+|00413EB9|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|CLCTimerTimer           |136 |
+|004059D4|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete            |117 |
+|00405884|RemoteDriver.exe|_alloc.h            |_STL              |__new_alloc.deallocate  |135 |
+|004231E7|RemoteDriver.exe|_alloc.h            |                  |_STL                    |360 |
+|004228BC|RemoteDriver.exe|_alloc.h            |                  |_STL                    |350 |
+|7E41F891|USER32.dll      |                    |                  |CallNextHookEx          |    |
+|7E4196C2|USER32.dll      |                    |                  |DispatchMessageA        |    |
+|7E4196B8|USER32.dll      |                    |                  |DispatchMessageA        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                 |47  |
+-------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 12/18/2007 19:19:33
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 12/18/2007 19:21:45
+  Address: 006321C1
+  Module : RemoteDriver.exe
+  Type   : EOSError
+  Message: System Error.  Code: 6.  The handle is invalid.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2046 Mb
+  Free Memory : 1363 Mb
+  Total Disk  : 232.88 Gb
+  Free Disk   : 119.45 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method       |Line|
+------------------------------------------------------------------------------------------------
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7C90EAF5|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException         |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException         |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException         |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas           |                  |SaveLog                |    |
+|00414A77|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |185 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |179 |
+|00414B1A|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|FormClose              |201 |
+|7C9297BC|ntdll.dll       |                    |                  |RtlUpperChar           |    |
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E4186B9|USER32.dll      |                    |                  |ReleaseDC              |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004059D4|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete           |117 |
+|00405884|RemoteDriver.exe|_alloc.h            |_STL              |__new_alloc.deallocate |135 |
+|004231E7|RemoteDriver.exe|_alloc.h            |                  |_STL                   |360 |
+|004228BC|RemoteDriver.exe|_alloc.h            |                  |_STL                   |350 |
+|004231B8|RemoteDriver.exe|_construct.h        |                  |_STL                   |115 |
+|00422F8F|RemoteDriver.exe|_construct.h        |                  |_STL                   |122 |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|7E4196C2|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|7E4196B8|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                |47  |
+------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 12/18/2007 19:19:33
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 12/18/2007 19:21:48
+  Address: 006321C1
+  Module : RemoteDriver.exe
+  Type   : EOSError
+  Message: System Error.  Code: 6.  The handle is invalid.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2046 Mb
+  Free Memory : 1363 Mb
+  Total Disk  : 232.88 Gb
+  Free Disk   : 119.45 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method       |Line|
+------------------------------------------------------------------------------------------------
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7C90EAF5|ntdll.dll       |                    |                  |KiUserApcDispatcher    |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException         |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException         |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException         |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas           |                  |SaveLog                |    |
+|00414A77|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |185 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate              |179 |
+|00414B1A|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|FormClose              |201 |
+|7C9297BC|ntdll.dll       |                    |                  |RtlUpperChar           |    |
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E4186B9|USER32.dll      |                    |                  |ReleaseDC              |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA        |    |
+|004059D4|RemoteDriver.exe|new.cpp             |_STL              |__stl_delete           |117 |
+|00405884|RemoteDriver.exe|_alloc.h            |_STL              |__new_alloc.deallocate |135 |
+|004231E7|RemoteDriver.exe|_alloc.h            |                  |_STL                   |360 |
+|004228BC|RemoteDriver.exe|_alloc.h            |                  |_STL                   |350 |
+|004231B8|RemoteDriver.exe|_construct.h        |                  |_STL                   |115 |
+|00422F8F|RemoteDriver.exe|_construct.h        |                  |_STL                   |122 |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection|    |
+|7E4196C2|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|7E4196B8|USER32.dll      |                    |                  |DispatchMessageA       |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                |47  |
+------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 12/18/2007 19:19:33
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 12/18/2007 19:22:32
+  Address: 006321C1
+  Module : RemoteDriver.exe
+  Type   : EOSError
+  Message: System Error.  Code: 6.  The handle is invalid.
+
+Active Controls...
+  Form Class   : TClosedLoopRunForm
+  Form Text    : Closed Loop Control
+  Control Class: TRzBitBtn
+  Control Text : Send Messages
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2046 Mb
+  Free Memory : 1378 Mb
+  Total Disk  : 232.88 Gb
+  Free Disk   : 119.45 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-------------------------------------------------------------------------------------------------
+|Address |Module          |Unit                |Class             |Procedure/Method        |Line|
+-------------------------------------------------------------------------------------------------
+|7C90EAF5|ntdll.dll       |                    |                  |KiUserApcDispatcher     |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException          |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException          |    |
+|7C812A55|kernel32.dll    |                    |                  |RaiseException          |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas           |                  |SaveLog                 |    |
+|00414A77|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate               |185 |
+|00414A34|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|Terminate               |179 |
+|00414B1A|RemoteDriver.exe|ClosedLoopRunFrm.cpp|TClosedLoopRunForm|FormClose               |201 |
+|7C9105D4|ntdll.dll       |                    |                  |RtlAllocateHeap         |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|7C91043D|ntdll.dll       |                    |                  |RtlFreeHeap             |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|77F1BB1A|GDI32.dll       |                    |                  |StretchBlt              |    |
+|7C91043D|ntdll.dll       |                    |                  |RtlFreeHeap             |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|7C9118EC|ntdll.dll       |                    |                  |RtlDeleteCriticalSection|    |
+|7C9118FD|ntdll.dll       |                    |                  |RtlDeleteCriticalSection|    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA         |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA         |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|7E41F658|USER32.dll      |                    |                  |CallWindowProcA         |    |
+|7E41F642|USER32.dll      |                    |                  |CallWindowProcA         |    |
+|7C8025EB|kernel32.dll    |                    |                  |WaitForSingleObjectEx   |    |
+|7C90E2EF|ntdll.dll       |                    |                  |ZwReleaseMutant         |    |
+|7C8024B1|kernel32.dll    |                    |                  |ReleaseMutex            |    |
+|7C9010ED|ntdll.dll       |                    |                  |RtlLeaveCriticalSection |    |
+|7E4196C2|USER32.dll      |                    |                  |DispatchMessageA        |    |
+|7E4196B8|USER32.dll      |                    |                  |DispatchMessageA        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp    |                  |WinMain                 |47  |
+-------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 06/16/2010 15:58:15
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 06/16/2010 15:58:53
+  Address: 0052A806
+  Module : RemoteDriver.exe
+  Type   : ESsInvalidFolder
+  Message: Invalid folder.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: 
+  Control Text : 
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2045 Mb
+  Free Memory : 327 Mb
+  Total Disk  : 837.99 Gb
+  Free Disk   : 267.33 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C90E485|ntdll.dll       |                 |               |KiUserApcDispatcher                     |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas        |               |SaveLog                                 |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A7DC|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |576 |
+|0053D8B7|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2690|
+|0053D820|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2680|
+|0040296C|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |274 |
+|7E42F3C2|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C90ECBA|ntdll.dll       |                 |               |RtlMultiByteToUnicodeN                  |    |
+|7C90D328|ntdll.dll       |                 |               |NtFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C90D328|ntdll.dll       |                 |               |NtFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7E4292DE|USER32.dll      |                 |               |SendMessageW                            |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|7E42994E|USER32.dll      |                 |               |RedrawWindow                            |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E4188CC|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E4188D5|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A993|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7C912EBB|ntdll.dll       |                 |               |RtlEqualUnicodeString                   |    |
+|7C914601|ntdll.dll       |                 |               |RtlQueryEnvironmentVariable_U           |    |
+|7C91045D|ntdll.dll       |                 |               |RtlReleasePebLock                       |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7E4196C2|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|7E4196B8|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 02/20/2012 16:24:09
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 02/20/2012 16:24:32
+  Address: 0052A806
+  Module : RemoteDriver.exe
+  Type   : ESsInvalidFolder
+  Message: Invalid folder.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TRzSpinEdit
+  Control Text : 10
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2045 Mb
+  Free Memory : 810 Mb
+  Total Disk  : 837.99 Gb
+  Free Disk   : 359.09 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C90E485|ntdll.dll       |                 |               |KiUserApcDispatcher                     |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas        |               |SaveLog                                 |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A7DC|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |576 |
+|0053D8B7|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2690|
+|0053D820|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2680|
+|0040296C|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |274 |
+|7E42F3C2|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C90ECBA|ntdll.dll       |                 |               |RtlMultiByteToUnicodeN                  |    |
+|7C90EB94|ntdll.dll       |                 |               |RtlAnsiStringToUnicodeString            |    |
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7E4292DE|USER32.dll      |                 |               |SendMessageW                            |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|7E42994E|USER32.dll      |                 |               |RedrawWindow                            |    |
+|7E4188CC|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E4188D5|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A993|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|004059D4|RemoteDriver.exe|new.cpp          |_STL           |__stl_delete                            |117 |
+|7C912D59|ntdll.dll       |                 |               |RtlEqualUnicodeString                   |    |
+|7C914561|ntdll.dll       |                 |               |RtlQueryEnvironmentVariable_U           |    |
+|7C91045D|ntdll.dll       |                 |               |RtlReleasePebLock                       |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7E4196C2|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|7E4196B8|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 02/20/2012 16:24:09
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 02/20/2012 16:24:45
+  Address: 0052A806
+  Module : RemoteDriver.exe
+  Type   : ESsInvalidFolder
+  Message: Invalid folder.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TStShellTreeView
+  Control Text : 
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2045 Mb
+  Free Memory : 815 Mb
+  Total Disk  : 837.99 Gb
+  Free Disk   : 359.09 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C90E485|ntdll.dll       |                 |               |KiUserApcDispatcher                     |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas        |               |SaveLog                                 |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A7DC|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |576 |
+|0053D8B7|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2690|
+|0053D820|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2680|
+|0040296C|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |274 |
+|7E42F3C2|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C90ECBA|ntdll.dll       |                 |               |RtlMultiByteToUnicodeN                  |    |
+|7C90EB94|ntdll.dll       |                 |               |RtlAnsiStringToUnicodeString            |    |
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7E4292DE|USER32.dll      |                 |               |SendMessageW                            |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|7E42994E|USER32.dll      |                 |               |RedrawWindow                            |    |
+|7E4188CC|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E4188D5|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A993|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7C912D59|ntdll.dll       |                 |               |RtlEqualUnicodeString                   |    |
+|7C914561|ntdll.dll       |                 |               |RtlQueryEnvironmentVariable_U           |    |
+|7C91045D|ntdll.dll       |                 |               |RtlReleasePebLock                       |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7E4196C2|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|7E4196B8|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 02/20/2012 16:24:09
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 02/20/2012 16:25:20
+  Address: 0052A806
+  Module : RemoteDriver.exe
+  Type   : ESsInvalidFolder
+  Message: Invalid folder.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TStShellTreeView
+  Control Text : 
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2045 Mb
+  Free Memory : 824 Mb
+  Total Disk  : 837.99 Gb
+  Free Disk   : 359.09 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C90E485|ntdll.dll       |                 |               |KiUserApcDispatcher                     |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas        |               |SaveLog                                 |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A7DC|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |576 |
+|0053D8B7|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2690|
+|0053D820|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2680|
+|0040296C|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |274 |
+|7E42F3C2|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C90ECBA|ntdll.dll       |                 |               |RtlMultiByteToUnicodeN                  |    |
+|7C90EB94|ntdll.dll       |                 |               |RtlAnsiStringToUnicodeString            |    |
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7E4292DE|USER32.dll      |                 |               |SendMessageW                            |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|7E42994E|USER32.dll      |                 |               |RedrawWindow                            |    |
+|7E4188CC|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E4188D5|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A993|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|004059D4|RemoteDriver.exe|new.cpp          |_STL           |__stl_delete                            |117 |
+|7C912D59|ntdll.dll       |                 |               |RtlEqualUnicodeString                   |    |
+|7C914561|ntdll.dll       |                 |               |RtlQueryEnvironmentVariable_U           |    |
+|7C91045D|ntdll.dll       |                 |               |RtlReleasePebLock                       |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7E4196C2|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|7E4196B8|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 02/20/2012 16:27:03
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 02/20/2012 16:27:08
+  Address: 0052A806
+  Module : RemoteDriver.exe
+  Type   : ESsInvalidFolder
+  Message: Invalid folder.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TRzSpinEdit
+  Control Text : 10
+
+Computer...
+  Name        : MICHAELSPC
+  Total Memory: 2045 Mb
+  Free Memory : 840 Mb
+  Total Disk  : 837.99 Gb
+  Free Disk   : 359.09 Gb
+
+Operating System...
+  Type    : Microsoft Windows XP
+  Build # : 2600
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C90E485|ntdll.dll       |                 |               |KiUserApcDispatcher                     |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|7C812AF5|kernel32.dll    |                 |               |RaiseException                          |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|0068D3EC|RemoteDriver.exe|Ecore.pas        |               |SaveLog                                 |    |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A806|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |579 |
+|0052A7DC|RemoteDriver.exe|SsBase.PAS       |Ssbase         |RaiseStError                            |576 |
+|0053D8B7|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2690|
+|0053D820|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStShellItem                            |2680|
+|0040296C|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |274 |
+|7E42F3C2|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|7C9011DD|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C90ECBA|ntdll.dll       |                 |               |RtlMultiByteToUnicodeN                  |    |
+|7C90EB94|ntdll.dll       |                 |               |RtlAnsiStringToUnicodeString            |    |
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C90D328|ntdll.dll       |                 |               |ZwFindAtom                              |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|7E4292DE|USER32.dll      |                 |               |SendMessageW                            |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|5D0A67FA|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|7E42994E|USER32.dll      |                 |               |RedrawWindow                            |    |
+|7E4188CC|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E4188D5|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A993|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7E42A97D|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|7C912D59|ntdll.dll       |                 |               |RtlEqualUnicodeString                   |    |
+|7C914561|ntdll.dll       |                 |               |RtlQueryEnvironmentVariable_U           |    |
+|7C91045D|ntdll.dll       |                 |               |RtlReleasePebLock                       |    |
+|7C9010E0|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|7E4196C2|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|7E4196B8|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 01/12/2023 20:20:47
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 01/12/2023 20:21:07
+  Address: 0062E891
+  Module : RemoteDriver.exe
+  Type   : EIntOverflow
+  Message: Integer overflow.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TStShellTreeView
+  Control Text : 
+
+Computer...
+  Name        : DESKTOP-3G6SG92
+  Total Memory: 2048 Mb
+  Free Memory : 2048 Mb
+  Total Disk  : 930.9 Gb
+  Free Disk   : 427.22 Gb
+
+Operating System...
+  Type    : 
+  Build # : 9200
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|774E5001|ntdll.dll       |                 |               |KiUserExceptionDispatcher               |    |
+|00408F29|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |JulianDateTime                          |315 |
+|00408EEC|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |JulianDateTime                          |299 |
+|00409009|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |ToTDateTime                             |362 |
+|00408E0F|RemoteDriver.exe|GpsTime.h        |               |TGpsTime                                |60  |
+|00404E1C|RemoteDriver.exe|_algobase.h      |               |_STL                                    |67  |
+|00404CEB|RemoteDriver.exe|matrix.cc        |               |techsoft                                |559 |
+|00408FE8|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |ToTDateTime                             |354 |
+|0040C22C|RemoteDriver.exe|NavStateFram.cpp |TNavStateFrame |SetNavState                             |82  |
+|0040BEFD|RemoteDriver.exe|_algobase.h      |               |_STL                                    |215 |
+|0040BEE8|RemoteDriver.exe|_algobase.h      |               |_STL                                    |214 |
+|0040BDF9|RemoteDriver.exe|_algobase.h      |               |_STL                                    |222 |
+|0040BC5C|RemoteDriver.exe|_valarray.h      |               |_STL                                    |140 |
+|0040BA91|RemoteDriver.exe|Vector3d.h       |               |TVector                                 |58  |
+|0040BA88|RemoteDriver.exe|Vector3d.h       |               |TVector                                 |55  |
+|00409FA7|RemoteDriver.exe|VehTruth.h       |               |TVehTruthRec                            |107 |
+|00409F1C|RemoteDriver.exe|VehTruth.h       |               |TVehTruthRec                            |105 |
+|0040C200|RemoteDriver.exe|NavStateFram.cpp |TNavStateFrame |SetNavState                             |75  |
+|00402E10|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SetNavStates                            |432 |
+|00402D38|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SetNavStates                            |423 |
+|00402A76|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |285 |
+|759146C0|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|774BC877|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|774B5EA9|ntdll.dll       |                 |               |RtlAllocateHeap                         |    |
+|774B3CE1|ntdll.dll       |                 |               |RtlFreeHeap                             |    |
+|774B3CA0|ntdll.dll       |                 |               |RtlFreeHeap                             |    |
+|7749BAF3|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|7749BAE0|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|774B3C82|ntdll.dll       |                 |               |RtlFreeUnicodeString                    |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774B3CA0|ntdll.dll       |                 |               |RtlFreeHeap                             |    |
+|7749BAF3|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|7749BAE0|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|774B3C82|ntdll.dll       |                 |               |RtlFreeUnicodeString                    |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|68B98D60|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|68B98D60|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|75928E4A|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|75914570|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914586|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914570|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914586|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914570|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|774BC877|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774E2B2A|ntdll.dll       |                 |               |NtCallbackReturn                        |    |
+|7591829B|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|75918290|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+|75CC00F7|KERNEL32.DLL    |                 |               |BaseThreadInitThunk                     |    |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Application...
+  Start Date      : 01/12/2023 20:20:47
+  Name/Description: RemoteDriver.exe
+  Version Number  : 0.1.0.0
+
+Exception...
+  Date   : 01/12/2023 20:21:16
+  Address: 0062E891
+  Module : RemoteDriver.exe
+  Type   : EIntOverflow
+  Message: Integer overflow.
+
+Active Controls...
+  Form Class   : TRemoteMainForm
+  Form Text    : Tapestry Closed Loop Control
+  Control Class: TStShellTreeView
+  Control Text : 
+
+Computer...
+  Name        : DESKTOP-3G6SG92
+  Total Memory: 2048 Mb
+  Free Memory : 2048 Mb
+  Total Disk  : 930.9 Gb
+  Free Disk   : 427.22 Gb
+
+Operating System...
+  Type    : 
+  Build # : 9200
+  Language: English (United States)
+
+-----------------------------------------------------------------------------------------------------------
+|Address |Module          |Unit             |Class          |Procedure/Method                        |Line|
+-----------------------------------------------------------------------------------------------------------
+|774E5001|ntdll.dll       |                 |               |KiUserExceptionDispatcher               |    |
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|00408F29|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |JulianDateTime                          |315 |
+|00408EEC|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |JulianDateTime                          |299 |
+|00409009|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |ToTDateTime                             |362 |
+|00408E0F|RemoteDriver.exe|GpsTime.h        |               |TGpsTime                                |60  |
+|00404E1C|RemoteDriver.exe|_algobase.h      |               |_STL                                    |67  |
+|00404CEB|RemoteDriver.exe|matrix.cc        |               |techsoft                                |559 |
+|00408FE8|RemoteDriver.exe|gpstime.cpp      |TGpsTime       |ToTDateTime                             |354 |
+|0040C22C|RemoteDriver.exe|NavStateFram.cpp |TNavStateFrame |SetNavState                             |82  |
+|0040BEFD|RemoteDriver.exe|_algobase.h      |               |_STL                                    |215 |
+|0040BEE8|RemoteDriver.exe|_algobase.h      |               |_STL                                    |214 |
+|0040BDF9|RemoteDriver.exe|_algobase.h      |               |_STL                                    |222 |
+|0040BC5C|RemoteDriver.exe|_valarray.h      |               |_STL                                    |140 |
+|0040BA91|RemoteDriver.exe|Vector3d.h       |               |TVector                                 |58  |
+|0040BA88|RemoteDriver.exe|Vector3d.h       |               |TVector                                 |55  |
+|00409FA7|RemoteDriver.exe|VehTruth.h       |               |TVehTruthRec                            |107 |
+|00409F1C|RemoteDriver.exe|VehTruth.h       |               |TVehTruthRec                            |105 |
+|0040C200|RemoteDriver.exe|NavStateFram.cpp |TNavStateFrame |SetNavState                             |75  |
+|00402E10|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SetNavStates                            |432 |
+|00402D38|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SetNavStates                            |423 |
+|00402A76|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |285 |
+|759146C0|USER32.dll      |                 |               |SendMessageA                            |    |
+|004028C8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|DispSelScen                             |263 |
+|004028A8|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |255 |
+|00402850|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|ChangeSelScen                           |233 |
+|00402336|RemoteDriver.exe|RemoteMainFrm.cpp|TRemoteMainForm|SelScenTreeViewFolderSelected           |110 |
+|0053FC53|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.Change           |3656|
+|774A2440|ntdll.dll       |                 |               |RtlRunOnceBeginInitialize               |    |
+|774A10A3|ntdll.dll       |                 |               |RtlRunOnceExecuteOnce                   |    |
+|005400A6|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.CNNotify         |3769|
+|774BC877|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|774B5EA9|ntdll.dll       |                 |               |RtlAllocateHeap                         |    |
+|774B3CE1|ntdll.dll       |                 |               |RtlFreeHeap                             |    |
+|774B3CA0|ntdll.dll       |                 |               |RtlFreeHeap                             |    |
+|7749BAF3|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|7749BAE0|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|774B3C82|ntdll.dll       |                 |               |RtlFreeUnicodeString                    |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774B3CA0|ntdll.dll       |                 |               |RtlFreeHeap                             |    |
+|7749BAF3|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|7749BAE0|ntdll.dll       |                 |               |RtlDeleteBoundaryDescriptor             |    |
+|774B3C82|ntdll.dll       |                 |               |RtlFreeUnicodeString                    |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|68B98D60|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|68B98D60|COMCTL32.DLL    |                 |               |DPA_DeletePtr                           |    |
+|75928E4A|USER32.dll      |                 |               |GetWindowLongW                          |    |
+|75914570|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914586|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914570|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914586|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|75914570|USER32.dll      |                 |               |CallWindowProcA                         |    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774AE820|ntdll.dll       |                 |               |RtlLeaveCriticalSection                 |    |
+|774BC877|ntdll.dll       |                 |               |RtlDeactivateActivationContextUnsafeFast|    |
+|00540356|RemoteDriver.exe|StShlCtl.PAS     |Stshlctl       |TStCustomShellTreeView.WndProc          |3829|
+|774E2B2A|ntdll.dll       |                 |               |NtCallbackReturn                        |    |
+|7591829B|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|75918290|USER32.dll      |                 |               |DispatchMessageA                        |    |
+|00401E0B|RemoteDriver.exe|RemoteDriver.cpp |               |WinMain                                 |47  |
+|75CC00F7|KERNEL32.DLL    |                 |               |BaseThreadInitThunk                     |    |
+-----------------------------------------------------------------------------------------------------------
+
+
+

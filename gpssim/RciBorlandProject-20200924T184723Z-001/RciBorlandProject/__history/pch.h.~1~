@@ -1,0 +1,93 @@
+#ifndef PCH_H
+#define PCH_H
+
+// VCL
+//
+#include <vcl.h>
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+#include <ExtCtrls.hpp>
+#include <Graphics.hpp>
+#include <Menus.hpp>
+#include <ComCtrls.hpp>
+#include <ToolWin.hpp>
+#include <ImgList.hpp>
+#include <inifiles.hpp>
+#include <Buttons.hpp>
+#include <syncobjs.hpp>
+#include <system.hpp>
+
+
+// TeeChart
+//
+#include <Chart.hpp>
+#include <TeEngine.hpp>
+#include <TeeProcs.hpp>
+#include <Series.hpp>
+
+// OS
+//
+#include <fstream>
+#include <iostream>
+#include <stdio.h>
+#include <dir.h>
+#include <math.h>
+
+// Standard Library
+//
+#include <vector>
+#include <map>
+#include <string>
+#include <queue>
+#include <strstream>
+#include <iomanip>
+#include <dstring.h>
+#include <cstring.h>
+
+
+// Raize
+//
+#include "RzPanel.hpp"
+#include "RzSplit.hpp"
+#include "RzSpnEdt.hpp"
+#include "RzStatus.hpp"
+#include "RzLstBox.hpp"
+#include "RzChkLst.hpp"
+#include "RzAnimtr.hpp"
+#include "RzButton.hpp"
+#include "RzLabel.hpp"
+#include "RzBorder.hpp"
+#include "RzDlgBtn.hpp"
+
+// Raize Codesite
+//
+#include "CsIntf.hpp"
+
+// Turbopower
+//
+#include "StBase.hpp"
+#include "StShlCtl.hpp"
+#include "SsBase.hpp"
+#include "OvcLabel.hpp"
+#include "o32flxbn.hpp"
+#include "StBrowsr.hpp"
+#include "StUtils.hpp"
+#include "StSystem.hpp"
+#include "ovcbase.hpp"
+#include "ovcef.hpp"
+#include "ovcsf.hpp"
+
+#include "bstream.h"
+#include "matrix.h"
+
+#define NINT(X)         ((long int)(((X) < 0.0) ? ((X) - 0.5) : ((X) + 0.5)))
+
+using namespace std;
+
+
+
+#endif
+
+ 

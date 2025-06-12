@@ -1,0 +1,2 @@
+C:\TAPESTRY\Trajectories\ImportExampleECEF.txt 12/5/2022 11:55:04 PM 
+ImportedTrajectory.txt 12/6/2022 12:05:40 AM 

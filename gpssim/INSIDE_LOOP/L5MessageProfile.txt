@@ -1,0 +1,9 @@
+10 - Ephemeris 1
+11 - Ephemeris 2
+12 - 1 2 3 4 5 6 7 - Reduced Almanac
+30 - Clock, Iono & Group Delay
+32 - Clock & EOP
+33 - Clock & UTC
+35 - Clock & GGTO
+36 - Clock & Text
+37 - Clock & Midi Almanac 1
