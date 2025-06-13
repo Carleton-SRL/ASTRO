@@ -1,5 +1,5 @@
 # Welcome to Space Flight Mechanics Testbed
-This testbed has been developed to support experimental validation of spacecraft guidance, navigation, and control (GNC) algorithms for autonomous proximity operations, rendezvous, formation flying, and cooperative maneuvers in space-like environments. The system is primarily aimed at enabling realistic real-time testing of formation flight scenarios, including perturbation modeling, sensor emulation, and communication constraints.
+This testbed has been developed to support experimental validation of spacecraft guidance, navigation, and control (GNC) algorithms for autonomous proximity operations, rendezvous, formation flying, and cooperative maneuvers in space-like environments. The system is primarily aimed at enabling realistic real-time testing of space flight scenarios, including perturbation modeling, sensor emulation, and communication constraints.
 
 The testbed includes emulated onboard sensors such as GPS and RADAR to simulate realistic sensor behavior under varied noise and update rate conditions. It also supports the modeling of inter-satellite links and relative navigation techniques, including angle-only tracking and nonlinear observer methods. The modularity of the system allows the testing of both cooperative and adversarial interaction scenarios (e.g., pursuit-evasion dynamics).
 
