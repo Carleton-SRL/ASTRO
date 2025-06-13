@@ -14,4 +14,5 @@ This repository contains the full software stack for the testbed, including:
   (4) Configuration files and mission templates for experiment setup and replication.
 
 The repository is actively maintained and intended to serve both as a research platform and an educational tool. For a complete description of the testbed architecture, experimental setup, and implementation details, please refer to Chapter 8 of the PhD thesis titled "Autonomous GNC of Spacecraft Rendezvous and Formation Flying on Perturbed Highly Elliptical Orbits" written by Yazan Chihabi.
+
 Contributions, bug reports, and feature requests are welcome to help improve the platform.
