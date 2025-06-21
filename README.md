@@ -30,7 +30,7 @@ This repository includes:
 The repository is actively maintained and intended to serve both as a research platform and an educational tool. For a detailed description of the testbed architecture, software stack, and experiment implementation, please refer to **Chapter 8** of the PhD thesis:
 
 > _"Autonomous GNC of Spacecraft Rendezvous and Formation Flying on Perturbed Highly Elliptical Orbits"_  
-> by **Yazan Chihabi**
+> by **Yazan Chihabi, Carleton University, 2025**
 
 ---
 
