@@ -31,7 +31,7 @@ The repository is actively maintained and intended to serve both as a research p
 
 > _"Autonomous GNC of Spacecraft Rendezvous and Formation Flying on Perturbed Highly Elliptical Orbits"_  
 > by **Yazan Chihabi, Carleton University, 2025**
-
+> can be found here: https://drive.google.com/file/d/11nnsbvVTmuAQnpLAAndDvMByMF42Up8P/view?usp=drivesdk
 ---
 
 ## 🛠️ Contributing
