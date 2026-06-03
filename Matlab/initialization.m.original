@@ -55,81 +55,7 @@ run('Physics_data/dataFCNini')
 % centralbody(8) = ocean tides perturbation 1 for on, 0 for off
 % centralbody(9) = gravity field degree (n)
 % centralbody(10) = gravity field degree (m)
-%
-% Fidelity presets:
-%   'fast'   : two-body only; fastest for debugging/controller iteration
-%   'medium' : luni-solar + drag + SRP + 4x4 gravity field
-%   'high'   : original high-fidelity model
-%
-% Execution presets:
-%   'fast_offline' : maximum throughput. No real-time pacing, ROS, terminal clock,
-%                    post-processing, or GPS-compatible 0.02 s propagation grid.
-%   'realtime_hil' : wall-clock pacing with ROS/HIL-friendly propagation and clock.
-%   'custom'       : edit individual SimulationOptions below.
-SimulationOptions.execution_mode = 'fast_offline';
-
-switch lower(SimulationOptions.execution_mode)
-    case 'fast_offline'
-        SimulationOptions.fidelity_mode = 'fast';
-        SimulationOptions.use_fixed_step_propagator = true;
-        SimulationOptions.gps_compatible_propagation = false; % CRITICAL: avoids 0.02 s RK4 grid when GPS sim is off
-        SimulationOptions.max_propagation_step = inf;         % one RK4 step over dt_data; avoids undefined dt before initialize_time
-        SimulationOptions.realtime_mode = false;
-        SimulationOptions.publish_ros = false;
-        SimulationOptions.publish_clock_every_step = false;
-        SimulationOptions.show_simulation_clock = false;
-        SimulationOptions.clock_display_wall_ratio = false;
-        SimulationOptions.enable_postprocessing = false;
-        SimulationOptions.verbose_timing = true;
-        SimulationOptions.ros_publish_skip = inf;
-        SimulationOptions.low_rate_ros_publish_skip = inf;
-
-    case 'realtime_hil'
-        SimulationOptions.fidelity_mode = 'medium';
-        SimulationOptions.use_fixed_step_propagator = true;
-        SimulationOptions.gps_compatible_propagation = true;
-        SimulationOptions.max_propagation_step = 0.02;        % GPS-compatible substep; update if dt_GPS changes
-        SimulationOptions.realtime_mode = true;
-        SimulationOptions.realtime_time_scale = 1.0;
-        SimulationOptions.publish_ros = true;
-        SimulationOptions.publish_clock_every_step = true;
-        SimulationOptions.show_simulation_clock = true;
-        SimulationOptions.clock_display_period = 1.0;
-        SimulationOptions.clock_display_wall_ratio = true;
-        SimulationOptions.enable_postprocessing = false;
-        SimulationOptions.verbose_timing = true;
-        SimulationOptions.ros_publish_skip = 2;
-        SimulationOptions.low_rate_ros_publish_skip = 5;
-
-    otherwise
-        % Custom mode. Edit the values below as needed.
-        SimulationOptions.fidelity_mode = 'fast';
-        SimulationOptions.use_fixed_step_propagator = true;
-        SimulationOptions.gps_compatible_propagation = false;
-        SimulationOptions.max_propagation_step = inf;
-        SimulationOptions.realtime_mode = false;
-        SimulationOptions.publish_ros = false;
-        SimulationOptions.publish_clock_every_step = false;
-        SimulationOptions.show_simulation_clock = false;
-        SimulationOptions.clock_display_period = 1.0;
-        SimulationOptions.clock_display_wall_ratio = false;
-        SimulationOptions.enable_postprocessing = false;
-        SimulationOptions.verbose_timing = true;
-        SimulationOptions.ros_publish_skip = inf;
-        SimulationOptions.low_rate_ros_publish_skip = inf;
-end
-
-SimulationOptions.realtime_time_scale = 1.0;          % 1.0 = wall-clock real time when realtime_mode=true
-SimulationOptions.realtime_max_overrun_warnings = 20; % avoid flooding terminal
-
-switch lower(SimulationOptions.fidelity_mode)
-    case 'fast'
-        centralbody = [0;0;0;0;0;0;0;0;0;0];
-    case 'medium'
-        centralbody = [1;1;0;1;1;0;0;0;4;4];
-    otherwise
-        centralbody = [1;1;1;1;1;1;1;1;8;8];
-end
+centralbody = [1;1;1;1;1;1;1;1;8;8];
 
 % hardware_flags(1) = OBC
 % hardware_flags(2) = GPS Simulator
@@ -201,9 +127,7 @@ if hardware_flags(2)
     [Status] = GPS_Simulator.StopGPSSimulator(GPS_SimulatorObj);
 end
 %% Data Post-Processing
-if ~exist('SimulationOptions','var') || ~isfield(SimulationOptions,'enable_postprocessing') || SimulationOptions.enable_postprocessing
-    Results_PostProcessing.run
-end
+Results_PostProcessing.run
 
 %%
 if hardware_flags(1)

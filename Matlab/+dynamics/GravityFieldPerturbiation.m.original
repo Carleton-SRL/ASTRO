@@ -12,38 +12,23 @@ lon = atan2(r_bf(2),r_bf(1));
 
 [pnm, dpnm] = dynamics.Legendre(nmax,nmin,latgc);
 
-% Precompute repeated quantities used in the spherical-harmonic loops.
-% This avoids repeated trig/power calls in the inner loop.
-mVec = 0:nmin;
-cosmlon = cos(mVec.*lon);
-sinmlon = sin(mVec.*lon);
-rho = r_ref/d;
-rhoPowers = rho.^(0:nmax);
-muOverD = mu_Primary/d;
-muOverD2 = mu_Primary/(d^2);
-
 dUdr = 0;
 dUdlatgc = 0;
 dUdlon = 0;
+q3 = 0; q2 = q3; q1 = q2;
 for n=0:nmax
-    b1 = -muOverD2*rhoPowers(n+1)*(n+1);
-    b2 =  muOverD*rhoPowers(n+1);
-    b3 =  b2;
-
-    q1 = 0;
-    q2 = 0;
-    q3 = 0;
-    for m=0:min(n,nmin)
-        cml = cosmlon(m+1);
-        sml = sinmlon(m+1);
-        harmonicTerm = C(n+1,m+1)*cml + S(n+1,m+1)*sml;
-        q1 = q1 + pnm(n+1,m+1)*harmonicTerm;
-        q2 = q2 + dpnm(n+1,m+1)*harmonicTerm;
-        q3 = q3 + m*pnm(n+1,m+1)*(S(n+1,m+1)*cml - C(n+1,m+1)*sml);
+    b1 = (-mu_Primary/d^2)*(r_ref/d)^n*(n+1);
+    b2 =  (mu_Primary/d)*(r_ref/d)^n;
+    b3 =  (mu_Primary/d)*(r_ref/d)^n;
+    for m=0:nmin
+        q1 = q1 + pnm(n+1,m+1)*(C(n+1,m+1)*cos(m*lon)+S(n+1,m+1)*sin(m*lon));
+        q2 = q2 + dpnm(n+1,m+1)*(C(n+1,m+1)*cos(m*lon)+S(n+1,m+1)*sin(m*lon));
+        q3 = q3 + m*pnm(n+1,m+1)*(S(n+1,m+1)*cos(m*lon)-C(n+1,m+1)*sin(m*lon));
     end
     dUdr     = dUdr     + q1*b1;
     dUdlatgc = dUdlatgc + q2*b2;
     dUdlon   = dUdlon   + q3*b3;
+    q3 = 0; q2 = q3; q1 = q2;
 end
 
 % Body-fixed acceleration

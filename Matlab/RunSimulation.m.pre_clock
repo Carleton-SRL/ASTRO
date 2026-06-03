@@ -23,35 +23,9 @@ if ~isfield(SimulationOptions,'realtime_time_scale'), SimulationOptions.realtime
 if ~isfield(SimulationOptions,'realtime_max_overrun_warnings'), SimulationOptions.realtime_max_overrun_warnings = 20; end
 if ~isfield(SimulationOptions,'verbose_timing'), SimulationOptions.verbose_timing = false; end
 if ~isfield(SimulationOptions,'publish_clock_every_step'), SimulationOptions.publish_clock_every_step = true; end
-if ~isfield(SimulationOptions,'show_simulation_clock'), SimulationOptions.show_simulation_clock = false; end
-if ~isfield(SimulationOptions,'clock_display_period'), SimulationOptions.clock_display_period = 1.0; end
-if ~isfield(SimulationOptions,'clock_display_wall_ratio'), SimulationOptions.clock_display_wall_ratio = true; end
-if ~isfield(SimulationOptions,'publish_ros'), SimulationOptions.publish_ros = true; end
-if ~isfield(SimulationOptions,'gps_compatible_propagation'), SimulationOptions.gps_compatible_propagation = hardware_flags(2); end
-if ~isfield(SimulationOptions,'max_propagation_step'), SimulationOptions.max_propagation_step = dt_GPS; end
-% Backward-compatible alias: if the user set SimulationOptions.realtime, respect it.
-if isfield(SimulationOptions,'realtime') && ~isfield(SimulationOptions,'realtime_mode')
-    SimulationOptions.realtime_mode = logical(SimulationOptions.realtime);
-end
-
-SimulationOptions.publish_ros = logical(SimulationOptions.publish_ros);
-if isinf(SimulationOptions.ros_publish_skip)
-    SimulationOptions.ros_publish_skip = realmax;
-else
-    SimulationOptions.ros_publish_skip = max(1,round(SimulationOptions.ros_publish_skip));
-end
-if isinf(SimulationOptions.low_rate_ros_publish_skip)
-    SimulationOptions.low_rate_ros_publish_skip = realmax;
-else
-    SimulationOptions.low_rate_ros_publish_skip = max(1,round(SimulationOptions.low_rate_ros_publish_skip));
-end
+SimulationOptions.ros_publish_skip = max(1,round(SimulationOptions.ros_publish_skip));
+SimulationOptions.low_rate_ros_publish_skip = max(1,round(SimulationOptions.low_rate_ros_publish_skip));
 SimulationOptions.realtime_time_scale = max(eps,SimulationOptions.realtime_time_scale);
-SimulationOptions.clock_display_period = max(0.1,SimulationOptions.clock_display_period);
-SimulationOptions.max_propagation_step = max(eps,SimulationOptions.max_propagation_step);
-
-% One switch to hard-disable all ROS publication paths without having to edit
-% hardware_flags everywhere. This is important for offline speed tests.
-rosEnabled = hardware_flags(1) && SimulationOptions.publish_ros;
 
 SimulationTiming.propagation_sec = 0;
 SimulationTiming.ros_publish_sec = 0;
@@ -63,12 +37,6 @@ SimulationTiming.overrun_count = 0;
 SimulationTiming.max_overrun_sec = 0;
 SimulationTiming.mean_step_sec = 0;
 
-% Efficient terminal clock state. This updates one command-window line at a
-% low rate instead of printing every step, which avoids slowing real-time/HIL runs.
-ClockDisplayState.last_update_sim_time = -inf;
-ClockDisplayState.last_line_length = 0;
-ClockDisplayState.enabled = logical(SimulationOptions.show_simulation_clock);
-
 if hardware_flags(2)
     [GPS_Pos,GPS_Vel,Status_Receiver,GPS_week_Receiver,GPS_Time_Receiver,GPS_Time_Status] = GPS_Receiver.parserBESTXYZ(gpsObj.UserData);
 end
@@ -79,35 +47,15 @@ ChaserAppliedAccel = [0;0;0];
 ChaserAppliedTorque = [0;0;0];
 ChaserGPS = [r2_I_prop;v2_I_prop;a2_I_prop];
 ChaserGPS_prev = ChaserGPS;
-if rosEnabled
+if hardware_flags(1)
     ROS_fcns.publish_data2ros(GNC_Run_ROS,msg_bool,true);
 end
 
 for i = 2:length(t)+1
     step_tic = tic;
     targetWallTime = t(i-1) / SimulationOptions.realtime_time_scale;
-
-    % Propagation grid selection:
-    % - GPS/HIL mode uses the original fine dt_GPS grid for compatibility.
-    % - Fast offline mode uses a coarser grid, often [0 dt], to avoid doing
-    %   50 RK4 substeps per one-second simulation step when GPS sim is off.
-    if hardware_flags(2) || SimulationOptions.gps_compatible_propagation
-        tpropStep = tpropGPS;
-    else
-        if SimulationOptions.max_propagation_step >= dt_data
-            tpropStep = [0 dt_data];
-        else
-            tpropStep = 0:SimulationOptions.max_propagation_step:dt_data;
-            if tpropStep(end) < dt_data
-                tpropStep = [tpropStep dt_data];
-            end
-        end
-    end
-    tpropStep_length = length(tpropStep);
-    forceScale = max(1,tpropStep_length-1);
-
-    rosPublishThisStep = rosEnabled && (mod(i-2,SimulationOptions.ros_publish_skip) == 0);
-    rosLowRatePublishThisStep = rosEnabled && (mod(i-2,SimulationOptions.low_rate_ros_publish_skip) == 0);
+    rosPublishThisStep = hardware_flags(1) && (mod(i-2,SimulationOptions.ros_publish_skip) == 0);
+    rosLowRatePublishThisStep = hardware_flags(1) && (mod(i-2,SimulationOptions.low_rate_ros_publish_skip) == 0);
 
     if rosLowRatePublishThisStep
         %% ROS Flags
@@ -190,7 +138,7 @@ for i = 2:length(t)+1
             TLE_prop_target = SensorModels.TLE.Model([r1_I_prop;v1_I_prop],BSRP_t,Bdrag_t,mu,TLE_std);
             TLE_prop = SensorModels.TLE.Model([r2_I_prop;v2_I_prop],BSRP_c,Bdrag_c,mu,TLE_std);
             TLE_update = true;
-            if rosEnabled
+            if hardware_flags(1)
                 ROS_fcns.publish_data2ros(Chaser_TLE_OE_ROS,msg_Float64MultiArray,TLE_prop);
                 ROS_fcns.publish_data2ros(Chaser_TLE_time_ROS,msg_UInt32MultiArray, ...
                     uint32(datevec(datetime([1970 1 1 0 0 posix_time_prop]))));
@@ -203,7 +151,7 @@ for i = 2:length(t)+1
             end
         else
             TLE_update = false;
-            if rosEnabled
+            if hardware_flags(1)
                 ROS_fcns.publish_data2ros(Chaser_TLE_flag_ROS,msg_bool,TLE_update);
                 ROS_fcns.publish_data2ros(Chaser_Target_TLE_flag_ROS,msg_bool,TLE_update);
             end
@@ -231,7 +179,7 @@ for i = 2:length(t)+1
     end
     %}
     %% Guidance, Navigation, and Control
-    if rosEnabled
+    if hardware_flags(1)
         % Keep the simulation clock at the base simulation rate in real-time/HIL mode.
         % Other high-bandwidth telemetry can still be throttled with ros_publish_skip.
         if SimulationOptions.publish_clock_every_step || rosPublishThisStep
@@ -293,16 +241,16 @@ for i = 2:length(t)+1
 
     propagation_tic = tic;
     if SimulationOptions.use_fixed_step_propagator
-        % Propagate Target Spacecraft with fixed-step RK4 over tpropStep.
+        % Propagate Target Spacecraft with fixed-step RK4 over tpropGPS.
         flag_sc = 1;
         targetFcn = @(tau,states) dynamics.simulator(tau,states, Cnm, Snm, ...
             ConstantParameters, AuxilaryParameters, MJD_UTC, centralbody, eopdata, ...
             PC, flag_sc, [0;0;0]);
-        targetstates = dynamics.propagate_fixed_step(tpropStep,[r1_I_prop; v1_I_prop],targetFcn);
+        targetstates = dynamics.propagate_fixed_step(tpropGPS,[r1_I_prop; v1_I_prop],targetFcn);
 
         targetAttFcn = @(tau,states) dynamics.Attitude.simulator(tau,states,[0;0;0], ...
             [0;0;0], [0;0;0], inertiaMatrix_Target, inertiaMatrix_Target_inv);
-        targetattitude = dynamics.propagate_fixed_step(tpropStep, ...
+        targetattitude = dynamics.propagate_fixed_step(tpropGPS, ...
             [Target_Attitude_prop; Target_AngularVelocity_prop],targetAttFcn);
 
         r1_I_prop = targetstates(1:3,end);
@@ -311,9 +259,9 @@ for i = 2:length(t)+1
         Target_AngularVelocity_prop = targetattitude(5:7,end);
 
         % Propagate Chaser attitude with fixed-step RK4.
-        chaserAttFcn = @(tau,states) dynamics.Attitude.simulator(tau,states,ChaserAppliedTorque./forceScale, ...
+        chaserAttFcn = @(tau,states) dynamics.Attitude.simulator(tau,states,ChaserAppliedTorque./max(1,(tpropGPS_length-1)), ...
             [0;0;0], [0;0;0], inertiaMatrix_Chaser, inertiaMatrix_Chaser_inv);
-        chaserattitude = dynamics.propagate_fixed_step(tpropStep, ...
+        chaserattitude = dynamics.propagate_fixed_step(tpropGPS, ...
             [Chaser_Attitude_prop; Chaser_AngularVelocity_prop],chaserAttFcn);
         Chaser_Attitude_prop = Rotations.NormalizeQuaternion(chaserattitude(1:4,end));
         Chaser_AngularVelocity_prop = chaserattitude(5:7,end);
@@ -325,8 +273,8 @@ for i = 2:length(t)+1
             flag_sc = 2;
             chaserFcn = @(tau,states) dynamics.simulator(tau,states, Cnm, Snm, ...
                 ConstantParameters, AuxilaryParameters, MJD_UTC, centralbody, eopdata, ...
-                PC, flag_sc, ChaserAppliedAccel./forceScale);
-            chaserstates = dynamics.propagate_fixed_step(tpropStep,[r2_I_prop; v2_I_prop],chaserFcn);
+                PC, flag_sc, ChaserAppliedAccel./max(1,(tpropGPS_length-1)));
+            chaserstates = dynamics.propagate_fixed_step(tpropGPS,[r2_I_prop; v2_I_prop],chaserFcn);
             r2_I_prop = chaserstates(1:3,end);
             v2_I_prop = chaserstates(4:6,end);
 
@@ -337,8 +285,8 @@ for i = 2:length(t)+1
             % Set and send the chaser spacecraft's position in the GPS simulator.
             if hardware_flags(2)
                 [~,a2_E_prop_prev,GPS_week,GPS_time,thetaGMT,MJD_UTC,JD,GPS_Simulator_Clock] = GPS_Simulator.SetSpacecraftPosition_GPSSIM_new(GPS_SimulatorObj, ...
-                    GPS_week,GPS_time,a2_E_prop_prev,chaserstates,tpropStep,thetaGMT,MJD_UTC,dt_GPS, ...
-                    ConstantParameters,eopdata, Cnm, Snm, PC, flag_sc, centralbody, AuxilaryParameters, ChaserAppliedAccel./forceScale);
+                    GPS_week,GPS_time,a2_E_prop_prev,chaserstates,tpropGPS,thetaGMT,MJD_UTC,dt_GPS, ...
+                    ConstantParameters,eopdata, Cnm, Snm, PC, flag_sc, centralbody, AuxilaryParameters, ChaserAppliedAccel./max(1,(tpropGPS_length-1)));
             end
         end
     else
@@ -390,35 +338,12 @@ for i = 2:length(t)+1
     posix_time_sec = uint32(floor(posix_time_prop));
     posix_time_nsec = uint32((posix_time_prop-floor(posix_time_prop))*1e9);
     ROS_time = [posix_time_sec;posix_time_nsec];
-    if rosEnabled && (SimulationOptions.publish_clock_every_step || rosPublishThisStep)
+    if hardware_flags(1) && (SimulationOptions.publish_clock_every_step || rosPublishThisStep)
         ROS_fcns.publish_time2ros(Clock_ROS,msg_time,ROS_time);
     end
     tpre = t(i-1);
 
     elapsedBeforeWait = toc(ts);
-
-    % Optional single-line simulation clock. Keep this before pause() so the
-    % displayed status reflects the completed step and current wall-clock lag.
-    if ClockDisplayState.enabled && ...
-            (t(i-1) - ClockDisplayState.last_update_sim_time >= SimulationOptions.clock_display_period || i == length(t)+1)
-        simTimeSec = t(i-1);
-        hh = floor(simTimeSec/3600);
-        mm = floor(mod(simTimeSec,3600)/60);
-        ss = floor(mod(simTimeSec,60));
-        if SimulationOptions.clock_display_wall_ratio && elapsedBeforeWait > 0
-            realtimeFactor = simTimeSec / elapsedBeforeWait;
-            lagSec = elapsedBeforeWait - targetWallTime;
-            lineText = sprintf('Sim Time %02d:%02d:%02d | Wall %.2f s | RT %.3fx | Lag %+0.3f s', ...
-                hh,mm,ss,elapsedBeforeWait,realtimeFactor,lagSec);
-        else
-            lineText = sprintf('Sim Time %02d:%02d:%02d',hh,mm,ss);
-        end
-        padCount = max(0,ClockDisplayState.last_line_length - length(lineText));
-        fprintf('\r%s%s',lineText,repmat(' ',1,padCount));
-        ClockDisplayState.last_line_length = length(lineText);
-        ClockDisplayState.last_update_sim_time = simTimeSec;
-    end
-
     if SimulationOptions.realtime_mode
         remainingTime = targetWallTime - elapsedBeforeWait;
         if remainingTime > 0
@@ -438,21 +363,10 @@ for i = 2:length(t)+1
     end
     SimulationTiming.step_sec(i-1) = toc(step_tic);
 end
-if rosEnabled
+if hardware_flags(1)
     ROS_fcns.publish_data2ros(GNC_Run_ROS,msg_bool,false);
-end
-if exist('ClockDisplayState','var') && isfield(ClockDisplayState,'enabled') && ClockDisplayState.enabled
-    fprintf('\n');
 end
 disp('Simulation completed successfully')
 if exist('SimulationOptions','var') && isfield(SimulationOptions,'verbose_timing') && SimulationOptions.verbose_timing
-    totalWallTime = toc(ts);
-    simulatedTime = t(end);
-    if totalWallTime > 0
-        validStepCount = min(length(t),numel(SimulationTiming.step_sec));
-        fprintf('Propagation time: %.3f s\n',SimulationTiming.propagation_sec);
-        fprintf('Total wall time: %.3f s for %.3f s simulated time (%.3fx real time)\n', ...
-            totalWallTime, simulatedTime, simulatedTime/totalWallTime);
-        fprintf('Mean step wall time: %.6f s\n',mean(SimulationTiming.step_sec(1:validStepCount)));
-    end
+    fprintf('Propagation time: %.3f s\n',SimulationTiming.propagation_sec);
 end

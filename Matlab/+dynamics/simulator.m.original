@@ -5,21 +5,6 @@ function X  = simulator(t,states, Cnm, Snm, ConstantParameters, AuxilaryParamete
 %{
 © 2025 Yazan Chihabi
 %}
-persistent mu_Earth mu_Sun mu_Moon mu_Mercury mu_Venus mu_Mars mu_Jupiter mu_Saturn mu_Uranus mu_Neptune mu_Pluto
-if isempty(mu_Earth)
-    mu_Earth   = 398600.4418;         % [km^3/s^2]; WGS-84
-    mu_Sun     = 132712440041.939377; % [km^3/s^2]; DE436
-    mu_Moon    = 4902.800117;         % [km^3/s^2]; DE436
-    mu_Mercury = 22031.780000;        % [km^3/s^2]; DE436
-    mu_Venus   = 324858.592000;       % [km^3/s^2]; DE436
-    mu_Mars    = 42828.375214;        % [km^3/s^2]; DE436
-    mu_Jupiter = 126712764.133446;    % [km^3/s^2]; DE436
-    mu_Saturn  = 37940585.200000;     % [km^3/s^2]; DE436
-    mu_Uranus  = 5794556.465752;      % [km^3/s^2]; DE436
-    mu_Neptune = 6836527.100580;      % [km^3/s^2]; DE436
-    mu_Pluto   = 975.501176;          % [km^3/s^2]; DE436
-end
-
 aI = [0;0;0];
 rI = states(1:3);
 vI = states(4:6);
@@ -28,23 +13,22 @@ aI = aI + u;
 
 flag = centralbody;
 
-% Only compute high-cost time/ephemeris/rotation quantities when a selected
-% perturbation model actually needs them. Pure two-body/drag-only runs avoid
-% JPL ephemeris and Earth-orientation calculations on every dynamics call.
-needTimeEphemeris = any(flag([1 2 3 5 6]) == 1);
-if needTimeEphemeris
-    [UT1,DJMJD0,~,TT,~,Mjd_UTC,r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus, ...
-     r_Neptune,r_Pluto,r_Moon,r_Sun,r_SunSSB,E,~,TT_UTC,x_pole,y_pole,~] = time_variables.Julian_time(t, MJD_initial, centralbody, ConstantParameters, eopdata, PC);
-else
-    UT1 = 0; DJMJD0 = 0; TT = 0; Mjd_UTC = MJD_initial + t/86400;
-    r_Mercury = [0;0;0]; r_Venus = [0;0;0]; r_Earth = [0;0;0]; r_Mars = [0;0;0];
-    r_Jupiter = [0;0;0]; r_Saturn = [0;0;0]; r_Uranus = [0;0;0]; r_Neptune = [0;0;0];
-    r_Pluto = [0;0;0]; r_Moon = [0;0;0]; r_Sun = [0;0;0]; r_SunSSB = [0;0;0];
-    E = eye(3); TT_UTC = 0; x_pole = 0; y_pole = 0;
-end
+[UT1,DJMJD0,~,TT,~,Mjd_UTC,r_Mercury,r_Venus,r_Earth,r_Mars,r_Jupiter,r_Saturn,r_Uranus, ...
+ r_Neptune,r_Pluto,r_Moon,r_Sun,r_SunSSB,E,~,TT_UTC,x_pole,y_pole,~] = time_variables.Julian_time(t, MJD_initial, centralbody, ConstantParameters, eopdata, PC);
 
 r = sqrt(rI(1)^2 + rI(2)^2 + rI(3)^2);
 v = sqrt(vI(1)^2 + vI(2)^2 + vI(3)^2);
+mu_Earth   = 398600.4418;         % [km^3/s^2]; WGS-84
+mu_Sun     = 132712440041.939377; % [km^3/s^2]; DE436
+mu_Moon    = 4902.800117;         % [km^3/s^2]; DE436
+mu_Mercury = 22031.780000;  	  % [km^3/s^2]; DE436
+mu_Venus   = 324858.592000;       % [km^3/s^2]; DE436
+mu_Mars    = 42828.375214; 	  	  % [km^3/s^2]; DE436
+mu_Jupiter = 126712764.133446;    % [km^3/s^2]; DE436
+mu_Saturn  = 37940585.200000;     % [km^3/s^2]; DE436
+mu_Uranus  = 5794556.465752;      % [km^3/s^2]; DE436
+mu_Neptune = 6836527.100580;      % [km^3/s^2]; DE436
+mu_Pluto   = 975.501176;   		  % [km^3/s^2]; DE436
 c_light = ConstantParameters.c_light;
 rE = ConstantParameters.R_Earth;
 nmax = flag(9);
