@@ -1,0 +1,26 @@
+material ASTRO/EarthDay
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture earth_day_procedural.jpg
+      }
+    }
+  }
+}
+material ASTRO/EarthClouds
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture earth_clouds_procedural.jpg
+      }
+    }
+  }
+}

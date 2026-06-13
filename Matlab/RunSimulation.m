@@ -27,6 +27,9 @@ if ~isfield(SimulationOptions,'show_simulation_clock'), SimulationOptions.show_s
 if ~isfield(SimulationOptions,'clock_display_period'), SimulationOptions.clock_display_period = 1.0; end
 if ~isfield(SimulationOptions,'clock_display_wall_ratio'), SimulationOptions.clock_display_wall_ratio = true; end
 if ~isfield(SimulationOptions,'publish_ros'), SimulationOptions.publish_ros = true; end
+if ~isfield(SimulationOptions,'enable_gazebo_visualizer'), SimulationOptions.enable_gazebo_visualizer = false; end
+if ~isfield(SimulationOptions,'gazebo_publish_skip'), SimulationOptions.gazebo_publish_skip = 1; end
+if ~isfield(SimulationOptions,'gazebo_publish_celestials'), SimulationOptions.gazebo_publish_celestials = true; end
 if ~isfield(SimulationOptions,'gps_compatible_propagation'), SimulationOptions.gps_compatible_propagation = hardware_flags(2); end
 if ~isfield(SimulationOptions,'max_propagation_step'), SimulationOptions.max_propagation_step = dt_GPS; end
 % Backward-compatible alias: if the user set SimulationOptions.realtime, respect it.
@@ -45,6 +48,11 @@ if isinf(SimulationOptions.low_rate_ros_publish_skip)
 else
     SimulationOptions.low_rate_ros_publish_skip = max(1,round(SimulationOptions.low_rate_ros_publish_skip));
 end
+if isinf(SimulationOptions.gazebo_publish_skip)
+    SimulationOptions.gazebo_publish_skip = realmax;
+else
+    SimulationOptions.gazebo_publish_skip = max(1,round(SimulationOptions.gazebo_publish_skip));
+end
 SimulationOptions.realtime_time_scale = max(eps,SimulationOptions.realtime_time_scale);
 SimulationOptions.clock_display_period = max(0.1,SimulationOptions.clock_display_period);
 SimulationOptions.max_propagation_step = max(eps,SimulationOptions.max_propagation_step);
@@ -52,6 +60,7 @@ SimulationOptions.max_propagation_step = max(eps,SimulationOptions.max_propagati
 % One switch to hard-disable all ROS publication paths without having to edit
 % hardware_flags everywhere. This is important for offline speed tests.
 rosEnabled = hardware_flags(1) && SimulationOptions.publish_ros;
+gazeboVizEnabled = SimulationOptions.enable_gazebo_visualizer && exist('GazeboVizPublishers','var') && ~isempty(GazeboVizPublishers);
 
 SimulationTiming.propagation_sec = 0;
 SimulationTiming.ros_publish_sec = 0;
@@ -108,6 +117,7 @@ for i = 2:length(t)+1
 
     rosPublishThisStep = rosEnabled && (mod(i-2,SimulationOptions.ros_publish_skip) == 0);
     rosLowRatePublishThisStep = rosEnabled && (mod(i-2,SimulationOptions.low_rate_ros_publish_skip) == 0);
+    gazeboPublishThisStep = gazeboVizEnabled && (mod(i-2,SimulationOptions.gazebo_publish_skip) == 0);
 
     if rosLowRatePublishThisStep
         %% ROS Flags
@@ -162,6 +172,38 @@ for i = 2:length(t)+1
         ROS_fcns.publish_vector2ros(Target_AngRates_ROS,msg,Target_AngularVelocity_prop,ROS_time);
         ROS_fcns.publish_quat2ros(Target_Attitude_ROS,msg_quat, ...
             Rotations.NormalizeQuaternion(Target_Attitude_prop),ROS_time);
+    end
+
+    %% Standalone Gazebo visualization state publication
+    % Publishes inertial [pos; vel; quat; omega] as nav_msgs/Odometry.
+    % This is intentionally independent of hardware_flags(1)/OBC ROS so the
+    % visualizer can run while the GNC/ROS deployment interface remains off.
+    if gazeboPublishThisStep
+        try
+            targetGazeboState = [r1_I_prop; v1_I_prop; ...
+                Rotations.NormalizeQuaternion(Target_Attitude_prop); ...
+                Target_AngularVelocity_prop];
+            chaserGazeboState = [r2_I_prop; v2_I_prop; ...
+                Rotations.NormalizeQuaternion(Chaser_Attitude_prop); ...
+                Chaser_AngularVelocity_prop];
+            GazeboViz.publishInertialState(GazeboVizPublishers.target, ...
+                targetGazeboState, GazeboVizPublishers.frame_id, ...
+                GazeboVizPublishers.child_target, GazeboVizPublishers.quaternion_order);
+            GazeboViz.publishInertialState(GazeboVizPublishers.chaser, ...
+                chaserGazeboState, GazeboVizPublishers.frame_id, ...
+                GazeboVizPublishers.child_chaser, GazeboVizPublishers.quaternion_order);
+            if isfield(SimulationOptions,'gazebo_publish_celestials') && SimulationOptions.gazebo_publish_celestials
+                if exist('MJD_UTC0','var') && exist('ConstantParameters','var') && ...
+                        exist('eopdata','var') && exist('PC','var') && exist('centralbody','var')
+                    publish_gazebo_ephemeris_bodies(GazeboVizPublishers, t(i-1), ...
+                        MJD_UTC0, centralbody, ConstantParameters, eopdata, PC);
+                end
+            end
+
+        catch ME
+            warning('Gazebo visualizer publish failed at step %d: %s', i, ME.message);
+            gazeboVizEnabled = false;
+        end
     end
 
     %% Vision Sensor Modelling

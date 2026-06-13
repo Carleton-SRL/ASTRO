@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="moon">
+    <static>true</static>
+    <link name="moon_link">
+      <visual name="moon_visual">
+        <geometry><sphere><radius>5.4</radius></sphere></geometry>
+        <material><script><uri>model://moon/materials/scripts</uri><uri>model://moon/materials/textures</uri><name>ASTRO/Moon</name></script></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

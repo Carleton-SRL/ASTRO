@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>astro_orbit_gazebo</name>
+  <version>0.1.0</version>
+  <description>Standalone ROS1/Gazebo visualizer for ASTRO spacecraft inertial orbit states.</description>
+  <maintainer email="user@example.com">ASTRO</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>gazebo_msgs</depend>
+  <depend>gazebo_ros</depend>
+  <depend>tf</depend>
+  <export></export>
+</package>

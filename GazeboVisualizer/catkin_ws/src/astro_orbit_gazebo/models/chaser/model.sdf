@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="chaser">
+    <static>false</static>
+    <link name="body">
+      <inertial><mass>1</mass><inertia><ixx>1</ixx><iyy>1</iyy><izz>1</izz></inertia></inertial>
+      <visual name="bus"><geometry><box><size>1.4 1.4 1.4</size></box></geometry><material><ambient>0.8 0.25 0.05 1</ambient><diffuse>0.9 0.35 0.08 1</diffuse></material></visual>
+      <visual name="nose"><pose>0.95 0 0 0 1.5708 0</pose><geometry><cylinder><radius>0.35</radius><length>0.5</length></cylinder></geometry><material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material></visual>
+    </link>
+  </model>
+</sdf>

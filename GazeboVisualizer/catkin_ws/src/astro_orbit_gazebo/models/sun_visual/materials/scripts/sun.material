@@ -1,0 +1,13 @@
+material ASTRO/Sun
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture sun_procedural.jpg
+      }
+    }
+  }
+}

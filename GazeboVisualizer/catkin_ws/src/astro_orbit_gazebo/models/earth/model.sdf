@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="earth">
+    <static>true</static>
+    <link name="earth_link">
+      <visual name="earth_day_visual">
+        <geometry><sphere><radius>20.0</radius></sphere></geometry>
+        <material><script><uri>model://earth/materials/scripts</uri><uri>model://earth/materials/textures</uri><name>ASTRO/EarthDay</name></script></material>
+      </visual>
+      <visual name="cloud_layer_visual">
+        <geometry><sphere><radius>20.25</radius></sphere></geometry>
+        <transparency>0.55</transparency>
+        <material><script><uri>model://earth/materials/scripts</uri><uri>model://earth/materials/textures</uri><name>ASTRO/EarthClouds</name></script></material>
+      </visual>
+      <visual name="atmosphere_shell">
+        <geometry><sphere><radius>20.65</radius></sphere></geometry>
+        <transparency>0.82</transparency>
+        <material><ambient>0.15 0.35 0.9 0.25</ambient><diffuse>0.15 0.35 0.9 0.20</diffuse></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

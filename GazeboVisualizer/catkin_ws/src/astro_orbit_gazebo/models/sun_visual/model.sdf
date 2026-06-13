@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="sun_visual">
+    <static>true</static>
+    <link name="sun_link">
+      <visual name="sun_visual">
+        <geometry><sphere><radius>8.0</radius></sphere></geometry>
+        <material>
+          <emissive>1.0 0.65 0.12 1</emissive><ambient>1.0 0.45 0.05 1</ambient><diffuse>1.0 0.55 0.08 1</diffuse>
+          <script><uri>model://sun_visual/materials/scripts</uri><uri>model://sun_visual/materials/textures</uri><name>ASTRO/Sun</name></script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

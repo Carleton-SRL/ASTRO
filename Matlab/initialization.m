@@ -66,9 +66,37 @@ run('Physics_data/dataFCNini')
 %                    post-processing, or GPS-compatible 0.02 s propagation grid.
 %   'realtime_hil' : wall-clock pacing with ROS/HIL-friendly propagation and clock.
 %   'custom'       : edit individual SimulationOptions below.
-SimulationOptions.execution_mode = 'fast_offline';
+SimulationOptions.execution_mode = 'gazebo_visualization';
 
 switch lower(SimulationOptions.execution_mode)
+    case 'gazebo_visualization'
+        % Standalone Gazebo visualizer mode.
+        % Launch Gazebo in WSL first, then run this script in MATLAB.
+        % MATLAB auto-connects to the WSL ROS master and publishes inertial
+        % [pos; vel; quat; omega] states as nav_msgs/Odometry.
+        SimulationOptions.fidelity_mode = 'fast';
+        SimulationOptions.use_fixed_step_propagator = true;
+        SimulationOptions.gps_compatible_propagation = false;
+        SimulationOptions.max_propagation_step = inf;
+        SimulationOptions.realtime_mode = true;
+        SimulationOptions.realtime_time_scale = 1.0;
+        SimulationOptions.publish_ros = false;              % Heavy OBC ROS interface off
+        SimulationOptions.publish_clock_every_step = false;
+        SimulationOptions.show_simulation_clock = true;
+        SimulationOptions.clock_display_period = 1.0;
+        SimulationOptions.clock_display_wall_ratio = true;
+        SimulationOptions.enable_postprocessing = false;
+        SimulationOptions.verbose_timing = true;
+        SimulationOptions.ros_publish_skip = inf;
+        SimulationOptions.low_rate_ros_publish_skip = inf;
+        SimulationOptions.enable_gazebo_visualizer = true;  % Lightweight Gazebo odometry topics on
+        SimulationOptions.gazebo_auto_rosinit = true;
+        SimulationOptions.gazebo_master_uri = 'auto';       % Uses `wsl hostname -I` on Windows
+        SimulationOptions.gazebo_publish_skip = 1;
+        SimulationOptions.gazebo_publish_celestials = true;
+        SimulationOptions.gazebo_frame_id = 'eci';
+        SimulationOptions.gazebo_quaternion_order = 'xyzw'; % ASTRO uses [qx qy qz qw]
+
     case 'fast_offline'
         SimulationOptions.fidelity_mode = 'fast';
         SimulationOptions.use_fixed_step_propagator = true;
@@ -83,6 +111,12 @@ switch lower(SimulationOptions.execution_mode)
         SimulationOptions.verbose_timing = true;
         SimulationOptions.ros_publish_skip = inf;
         SimulationOptions.low_rate_ros_publish_skip = inf;
+        SimulationOptions.enable_gazebo_visualizer = false;
+        SimulationOptions.gazebo_auto_rosinit = true;
+        SimulationOptions.gazebo_master_uri = 'auto';
+        SimulationOptions.gazebo_publish_skip = inf;
+        SimulationOptions.gazebo_frame_id = 'eci';
+        SimulationOptions.gazebo_quaternion_order = 'xyzw';
 
     case 'realtime_hil'
         SimulationOptions.fidelity_mode = 'medium';
@@ -100,6 +134,12 @@ switch lower(SimulationOptions.execution_mode)
         SimulationOptions.verbose_timing = true;
         SimulationOptions.ros_publish_skip = 2;
         SimulationOptions.low_rate_ros_publish_skip = 5;
+        SimulationOptions.enable_gazebo_visualizer = false;
+        SimulationOptions.gazebo_auto_rosinit = true;
+        SimulationOptions.gazebo_master_uri = 'auto';
+        SimulationOptions.gazebo_publish_skip = 2;
+        SimulationOptions.gazebo_frame_id = 'eci';
+        SimulationOptions.gazebo_quaternion_order = 'xyzw';
 
     otherwise
         % Custom mode. Edit the values below as needed.
@@ -117,6 +157,12 @@ switch lower(SimulationOptions.execution_mode)
         SimulationOptions.verbose_timing = true;
         SimulationOptions.ros_publish_skip = inf;
         SimulationOptions.low_rate_ros_publish_skip = inf;
+        SimulationOptions.enable_gazebo_visualizer = false;
+        SimulationOptions.gazebo_auto_rosinit = true;
+        SimulationOptions.gazebo_master_uri = 'auto';
+        SimulationOptions.gazebo_publish_skip = inf;
+        SimulationOptions.gazebo_frame_id = 'eci';
+        SimulationOptions.gazebo_quaternion_order = 'xyzw';
 end
 
 SimulationOptions.realtime_time_scale = 1.0;          % 1.0 = wall-clock real time when realtime_mode=true
@@ -179,6 +225,25 @@ Control.initialize
 %% Initialize ROS
 if hardware_flags(1)
     initializeOBC_ROS
+end
+
+%% Initialize standalone Gazebo visualizer ROS publishers
+% This is independent of the heavy OBC ROS interface above. It only publishes:
+%   /astro/target/state
+%   /astro/chaser/state
+% as nav_msgs/Odometry using inertial [pos; vel; quat; omega].
+GazeboVizPublishers = [];
+if isfield(SimulationOptions,'enable_gazebo_visualizer') && SimulationOptions.enable_gazebo_visualizer
+    try
+        GazeboVizPublishers = run_gazebo_visualizer( ...
+            'AutoInit', SimulationOptions.gazebo_auto_rosinit, ...
+            'MasterURI', SimulationOptions.gazebo_master_uri, ...
+            'FrameId', SimulationOptions.gazebo_frame_id, ...
+            'QuaternionOrder', SimulationOptions.gazebo_quaternion_order);
+    catch ME
+        warning('Gazebo visualizer initialization failed: %s', ME.message);
+        GazeboVizPublishers = [];
+    end
 end
 
 %% GPS receiver initialization

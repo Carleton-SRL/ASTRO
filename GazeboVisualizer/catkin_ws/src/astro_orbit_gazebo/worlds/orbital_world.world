@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="astro_orbit_world">
+    <gravity>0 0 0</gravity>
+    <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.01</max_step_size>
+      <real_time_update_rate>100</real_time_update_rate>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <scene>
+      <ambient>0.025 0.025 0.045 1</ambient>
+      <background>0.0 0.0 0.015 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- Main directional light. Runtime control is handled by lighting_control.py. -->
+    <light name="main_sun_light" type="directional">
+      <pose>0 0 0 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.7 0.7 0.7 1</specular>
+      <direction>-0.5 0.2 -0.8</direction>
+      <cast_shadows>true</cast_shadows>
+    </light>
+
+    <!-- Static startup visuals. The ROS bridge will move these once MATLAB publishes state. -->
+    <include>
+      <uri>model://earth</uri>
+      <pose>0 0 -80 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://moon</uri>
+      <pose>-80 80 20 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://sun_visual</uri>
+      <pose>120 -40 60 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://target</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://chaser</uri>
+      <pose>25 0 0 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

@@ -1,0 +1,54 @@
+<launch>
+  <arg name="gui" default="true" />
+  <arg name="paused" default="false" />
+  <arg name="world" default="$(find astro_orbit_gazebo)/worlds/orbital_world.world" />
+  <arg name="position_units" default="km" />
+  <arg name="visual_scale" default="0.01" />
+  <arg name="celestial_visual_scale" default="0.0000005" />
+  <arg name="center_mode" default="target" />
+  <arg name="lighting_mode" default="day" />
+
+  <env name="GAZEBO_MODEL_PATH" value="$(find astro_orbit_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="use_sim_time" value="false" />
+  </include>
+
+  <node pkg="astro_orbit_gazebo" type="state_to_gazebo.py" name="state_to_gazebo" output="screen">
+    <param name="target_topic" value="/astro/target/state" />
+    <param name="chaser_topic" value="/astro/chaser/state" />
+    <param name="sun_topic" value="/astro/sun/state" />
+    <param name="moon_topic" value="/astro/moon/state" />
+    <param name="target_model" value="target" />
+    <param name="chaser_model" value="chaser" />
+    <param name="sun_model" value="sun_visual" />
+    <param name="moon_model" value="moon" />
+    <param name="position_units" value="$(arg position_units)" />
+    <param name="visual_scale" value="$(arg visual_scale)" />
+    <param name="celestial_visual_scale" value="$(arg celestial_visual_scale)" />
+    <param name="center_mode" value="$(arg center_mode)" />
+    <param name="update_rate" value="30" />
+    <param name="publish_tf" value="true" />
+  </node>
+
+  <node pkg="astro_orbit_gazebo" type="orbit_marker_engine.py" name="orbit_marker_engine" output="screen">
+    <param name="target_topic" value="/astro/target/state" />
+    <param name="chaser_topic" value="/astro/chaser/state" />
+    <param name="position_units" value="$(arg position_units)" />
+    <param name="visual_scale" value="$(arg visual_scale)" />
+    <param name="center_mode" value="$(arg center_mode)" />
+    <param name="max_points" value="4000" />
+  </node>
+
+  <node pkg="astro_orbit_gazebo" type="lighting_control.py" name="lighting_control" output="screen">
+    <param name="light_name" value="main_sun_light" />
+    <param name="initial_mode" value="$(arg lighting_mode)" />
+    <param name="mode_topic" value="/astro/viz/lighting_mode" />
+    <param name="sun_direction_topic" value="/astro/viz/sun_direction" />
+    <param name="sun_state_topic" value="/astro/sun/state" />
+    <param name="intensity_topic" value="/astro/viz/light_intensity" />
+  </node>
+</launch>

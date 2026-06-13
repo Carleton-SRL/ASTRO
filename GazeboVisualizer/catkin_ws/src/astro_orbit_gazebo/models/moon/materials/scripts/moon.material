@@ -1,0 +1,13 @@
+material ASTRO/Moon
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture moon_procedural.jpg
+      }
+    }
+  }
+}
